@@ -1,0 +1,67 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    padding: 1rem 5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+.btn-rounded {
+  border-radius: 2rem;
+}
+
+.btn-white {
+  background: $color-white;
+  color: $color-darker;
+
+  & span {
+    font-weight: 500;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.3s;
+  }
+}
+
+.btn-orange {
+  background: $color-primary;
+  color: $color-white;
+
+  & span {
+    font-weight: 500;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.3s;
+  }
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: $color-white;
+  transition: all 0.8s;
+
+  & span {
+    font-weight: 500;
+  }
+
+  &:hover {
+    background: #128C7E;
+    transition: all 0.8s;
+  }
+}
+
+.submit {
+  width: 15rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: inherit;
+  font-weight: 500;
+}

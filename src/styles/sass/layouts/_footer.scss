@@ -1,0 +1,91 @@
+.footer {
+  padding: 8rem 4rem 5rem 4rem;
+  background: $color-white;
+
+  img {
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  @include respond(tab-port) {
+    padding: 6rem;
+  }
+
+  @include respond(phone) {
+    padding: 4rem;
+  }
+
+  &__menu {
+    h2 {
+      font-size: 2.2rem;
+      color: $color-dark;
+      margin-bottom: 2rem;
+
+      @include respond(tab-port) {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+      font-size: 1.7rem;
+      color: $color-darker;
+      font-weight: 300;
+
+      @include respond(tab-port) {
+        font-size: 2.2rem;
+      }
+    }
+
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__icons-social {
+    h2 {
+      font-size: 2.2rem;
+      color: $color-dark;
+      margin-bottom: 2rem;
+
+      @include respond(tab-port) {
+        font-size: 3rem;
+      }
+    }
+
+    i {
+      font-size: 3rem;
+      margin-right: 1.5rem;
+      color: $color-primary;
+      transition: all 0.5s;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 1.6rem;
+    color: $color-darker;
+    text-align: center;
+
+    &:hover b {
+      color: $color-secondary;
+      cursor: pointer;
+    }
+  }
+}
+
+.nav-link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: $color-darker;
+  }
+
+  &:hover p {
+    color: $color-secondary;
+  }
+}

@@ -1,0 +1,84 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6rem;
+
+  @include respond(tab-port) {
+    padding: 3rem 0;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include respond(tab-port) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.presentation {
+  height: 100%;
+  margin-top: 8rem;
+  background: $color-primary;
+  padding: 20rem;
+}
+
+.vantagens-residencial {
+  background: $color-white;
+  border-radius: 1rem;
+  padding: 5rem;
+  margin: 0 20rem;
+  margin-top: -12rem;
+  box-shadow: -2rem 1rem 3rem rgba(0, 0, 0, 0.2);
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+
+    p {
+      font-size: 2rem;
+      color: #999;
+      font-weight: 400;
+      margin-left: 1rem;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #636363;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: $color-primary;
+  }
+}
+
+.swing-in-top-fwd {
+	-webkit-animation: swing-in-top-fwd 2.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 2.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}

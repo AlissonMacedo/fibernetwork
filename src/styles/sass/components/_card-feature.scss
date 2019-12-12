@@ -1,0 +1,65 @@
+.card-feature {
+  display: flex;
+  flex-direction: column;
+
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 23rem;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  transition: all 0.3s;
+
+  &__orange {
+    background-color: $color-primary;
+  }
+
+  &__black {
+    background-color: $color-dark;
+  }
+
+  @include respond(tab-land) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 45rem;
+    margin-right: 0 !important;
+    margin-bottom: 3rem;
+  }
+
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+
+  &:not(:last-child) {
+    @include respond(tab-port) {
+      margin-bottom: 3rem;
+      margin-right: 0;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    cursor: default;
+  }
+
+  i {
+    font-size: 6rem;
+    color: $color-white;
+    margin-bottom: 4rem;
+
+    @include respond(tab-land) {
+      margin-bottom: 0rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    color: $color-white;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: $color-white;
+  }
+}

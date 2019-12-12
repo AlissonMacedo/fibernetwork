@@ -1,0 +1,81 @@
+.intro {
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__bg-01 {
+    background-image: linear-gradient(
+        to bottom left,
+        rgba($color-primary, 0.8),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../../img/business.jpg);
+  }
+
+  &__bg-02 {
+    background-image: linear-gradient(
+        to bottom left,
+        rgba($color-primary, 0.8),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../../img/business.jpg);
+  }
+
+  &__bg-03 {
+    background-image: linear-gradient(
+        to bottom left,
+        rgba($color-primary, 0.8),
+        rgba($color-secondary, 0.8)
+      ),
+      url(../../img/contact-people.jpg);
+  }
+
+  @include respond(tab-port) {
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  &__photo-smartphone {
+    justify-content: space-between;
+
+    img {
+      width: 25rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    color: $color-white;
+    text-transform: uppercase;
+    margin-left: 5rem;
+
+    @include respond(phone) {
+      align-items: center;
+      margin-left: 0;
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 4rem;
+
+      @include respond(phone) {
+        font-size: 3rem;
+      }
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 4rem;
+      margin-bottom: 2rem;
+
+      @include respond(phone) {
+        font-size: 3rem;
+      }
+    }
+  }
+}

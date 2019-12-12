@@ -1,0 +1,121 @@
+.section-contato {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+
+  padding: 15rem;
+
+  &__textBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__imageBox {
+    img {
+      height: 45rem;
+      -ms-transform: skewY(10deg); /* IE 9 */
+      -webkit-transform: skewY(10deg); /* Safari 3-8 */
+      transform: skewY(10deg);
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #777;
+    text-align: left;
+  }
+
+  p {
+    margin-top: 5rem;
+    font-size: 2.5rem;
+    color: $color-primary;
+  }
+}
+
+.section-ContactInfo {
+  padding: 5rem 15rem;
+  background: linear-gradient(183deg, #333132, #4A4848);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  margin-top: -15rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background: $color-white;
+  border-radius: 1rem;
+  padding: 5rem;
+  box-shadow: 1rem 0.5rem 1.5rem rgba($color-black, 0.2);
+
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-top: -10rem;
+    border-radius: 50%;
+    background: $color-primary;
+    box-shadow: 1rem 0.5rem 1rem rgba($color-primary, 0.5);
+    width: 8rem;
+    height: 8rem;
+
+
+    svg {
+      margin: 0 auto;
+    }
+  }
+
+  strong {
+    font-size: 2rem;
+    color: #666;
+    margin: 2rem 0;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: #999;
+
+    a {
+      color: #999;
+      transition: all .5s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.section-formContato {
+  padding: 15rem;
+  height: 100%;
+  background-image: linear-gradient(
+    103.3deg,
+  rgba(253,109,104,1) 7.7%,
+  rgba(248,71,38,0.8) 90.8%
+  );
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.tilt-in-top-1 {
+	-webkit-animation: tilt-in-top-1 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top-1 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}

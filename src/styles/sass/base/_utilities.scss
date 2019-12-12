@@ -1,0 +1,41 @@
+.mt-small {
+  margin-top: 2rem;
+}
+
+.mt-middle {
+  margin-top: 5rem;
+}
+
+.mb-small {
+  margin-bottom: 2rem;
+}
+
+.mb-middle {
+  margin-bottom: 5rem;
+}
+
+.mt-big {
+  margin-top: 8rem !important;
+}
+
+.mt-bigger {
+  margin-top: 15rem !important;
+}
+
+.mb-big {
+  margin-bottom: 7rem;
+}
+
+.no-transparent {
+  background-color: $color-primary !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.h-desk {
+  @media only screen and (min-width: 900px) {
+    display: none;
+  }
+}
