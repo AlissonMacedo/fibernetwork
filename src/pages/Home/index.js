@@ -85,7 +85,7 @@ export default function Home() {
             Temos a melhor e mais avançada tecnologia em Internet só para você.
           </p>
 
-          <Link to="/empresarial" className="btn btn-white">
+          <Link to="/empresarial" className="btn btn-orange">
             Consultar nossos planos
           </Link>
         </div>

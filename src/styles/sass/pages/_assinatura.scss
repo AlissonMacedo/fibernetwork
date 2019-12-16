@@ -1,0 +1,34 @@
+.intro-assinatura {
+  margin-top: 8rem;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15rem;
+
+  background: #f26425;
+  background: -webkit-linear-gradient(
+    to right,
+    #f26425,
+    #ed8f03
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f26425,
+    #ed8f03
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  p {
+    color: #fff;
+    font-size: 5rem;
+
+  }
+  span {
+    display: block;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 300;
+  }
+}

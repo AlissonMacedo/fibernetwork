@@ -9,7 +9,7 @@
  * animation tracking-in-expand
  * ----------------------------------------
  */
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
 @-webkit-keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;
@@ -181,6 +181,9 @@ button {
 .mb-big {
   margin-bottom: 7rem; }
 
+.mt-12 {
+  margin-top: -12rem !important; }
+
 .no-transparent {
   background-color: #f26425 !important; }
 
@@ -192,8 +195,8 @@ button {
     display: none; } }
 
 .btn, .btn:link, .btn:visited {
-  padding: 1rem 5rem;
-  border-radius: 4px;
+  padding: 1rem 4rem;
+  border-radius: 5rem;
   border: none;
   cursor: pointer;
   text-align: center;
@@ -236,6 +239,47 @@ button {
   font-size: 1.8rem;
   font-family: inherit;
   font-weight: 500; }
+
+/**
+* Switch Button
+*/
+.switch-button {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  will-change: transform;
+  z-index: 197 !important;
+  cursor: pointer;
+  transition: .3s ease all;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  overflow: hidden; }
+  .switch-button-case {
+    background: none;
+    width: 49%;
+    height: 100%;
+    color: #ffffff;
+    border: none;
+    transition: .3s ease all;
+    text-transform: uppercase;
+    padding-bottom: 1px; }
+    .switch-button-case:hover {
+      color: #666;
+      cursor: pointer; }
+    .switch-button-case:focus {
+      outline: none; }
+  .switch-button .active {
+    color: #f26425;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    transition: .3s ease-out all; }
+    .switch-button .active-case {
+      color: #f26425; }
 
 .card-feature {
   display: flex;
@@ -363,10 +407,7 @@ button {
         font-weight: 400; }
 
 .form {
-  padding: 8rem;
-  background: #fff;
-  width: 50%;
-  margin: 0 auto; }
+  padding: 5rem; }
   @media (max-width: 75em) and (orientation: landscape) {
     .form {
       padding: 3.8rem 2rem; } }
@@ -375,6 +416,14 @@ button {
       padding: 3.8rem 2rem; } }
   .form__group:not(:last-child) {
     margin-bottom: 1.3rem; }
+    @media (max-width: 37.5em) {
+      .form__group:not(:last-child) {
+        width: 100%; } }
+  .form .group-width {
+    width: 30%; }
+    @media (max-width: 37.5em) {
+      .form .group-width {
+        width: 100%; } }
   .form__input {
     font-family: inherit;
     color: #3a3a3a;
@@ -385,7 +434,7 @@ button {
     border-bottom: 0.3rem solid transparent;
     width: 90%;
     display: block;
-    font-weight: 500; }
+    font-weight: 600; }
     @media (max-width: 37.5em) {
       .form__input {
         width: 100%; } }
@@ -394,6 +443,59 @@ button {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
       border-bottom: 0.3rem solid #f26425; }
     .form__input:focus:invalid {
+      border-bottom: 0.3rem solid #e37a7a; }
+  .form__selectCity {
+    font-family: inherit;
+    color: #3a3a3a;
+    padding: 1.8rem 1.3rem;
+    border-radius: 0.3rem 0.3rem 0 0;
+    background-color: #e5e5e5;
+    border: none;
+    border-bottom: 0.3rem solid transparent;
+    width: 50%;
+    display: block;
+    font-weight: 600;
+    margin: auto; }
+    @media (max-width: 37.5em) {
+      .form__selectCity {
+        width: 100%; } }
+    .form__selectCity:focus {
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      border-bottom: 0.3rem solid #f26425; }
+    .form__selectCity:focus:invalid {
+      border-bottom: 0.3rem solid #e37a7a; }
+  .form__label {
+    margin: 0.6rem 1.3rem;
+    display: block;
+    font-size: 1.6rem;
+    color: #f26425;
+    transition: all 0.3s;
+    font-weight: 600; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem); }
+  .form__selectState {
+    font-family: inherit;
+    color: #3a3a3a;
+    padding: 1.8rem 1.3rem;
+    border-radius: 0.3rem 0.3rem 0 0;
+    background-color: #e5e5e5;
+    border: none;
+    border-bottom: 0.3rem solid transparent;
+    width: 100%;
+    display: block;
+    font-weight: 600;
+    margin: 5em 0 5em 0; }
+    @media (max-width: 37.5em) {
+      .form__selectState {
+        width: 100%; } }
+    .form__selectState:focus {
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      border-bottom: 0.3rem solid #f26425; }
+    .form__selectState:focus:invalid {
       border-bottom: 0.3rem solid #e37a7a; }
   .form__label {
     margin: 0.6rem 1.3rem;
@@ -428,13 +530,16 @@ button {
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    width: calc(
+ 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc(
+ 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+    width: calc(
+ 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .footer {
   padding: 8rem 4rem 5rem 4rem;
@@ -572,8 +677,7 @@ button {
 
 .plan {
   padding: 5rem;
-  min-height: 400px;
-  height: 100%; }
+  min-height: 400px; }
   .plan__content {
     background: #fff;
     height: 100%;
@@ -584,8 +688,7 @@ button {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    flex-flow: wrap;
-    height: 100%; }
+    flex-flow: wrap; }
   .plan__title {
     background-image: linear-gradient(103.3deg, #fd6d68 7.7%, rgba(248, 71, 38, 0.8) 90.8%);
     padding: 2rem;
@@ -618,8 +721,8 @@ button {
     .plan__list--black {
       color: #3a3a3a; }
   .plan__btnBox {
-    padding: 1rem 5rem;
-    border-radius: 4px;
+    padding: 1rem 4rem;
+    border-radius: 5rem;
     border: none;
     cursor: pointer;
     text-align: center;
@@ -657,15 +760,15 @@ button {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  background-image: linear-gradient(103.3deg, #fd6d68 7.7%, rgba(248, 71, 38, 0.8) 90.8%); }
+  background: #fff; }
   .paraSua-empresa__text {
     text-align: right;
     margin: 0 2rem; }
     .paraSua-empresa__text h2 {
-      color: #ffffff;
+      color: #f26425;
       font-size: 6rem; }
     .paraSua-empresa__text p {
-      color: #3a3a3a;
+      color: #666;
       font-size: 3rem; }
   .paraSua-empresa__image {
     width: 100%;
@@ -796,19 +899,20 @@ button {
   border-radius: 1rem;
   padding: 5rem;
   margin: 0 20rem;
-  margin-top: -12rem;
   box-shadow: -2rem 1rem 3rem rgba(0, 0, 0, 0.2); }
   .vantagens-residencial__content {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 4rem; }
+    flex-flow: wrap; }
   .vantagens-residencial__card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 40%; }
+    flex: 1 0 33%;
+    width: 40%;
+    margin: 3rem 0; }
     .vantagens-residencial__card p {
       font-size: 2rem;
       color: #999;
@@ -828,3 +932,43 @@ button {
 .swing-in-top-fwd {
   -webkit-animation: swing-in-top-fwd 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+
+.nossos-planos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -35rem; }
+  .nossos-planos h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #fff; }
+  .nossos-planos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff; }
+
+.intro-assinatura {
+  margin-top: 8rem;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15rem;
+  background: #f26425;
+  background: -webkit-linear-gradient(to right, #f26425, #ed8f03);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f26425, #ed8f03);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .intro-assinatura p {
+    color: #fff;
+    font-size: 5rem; }
+  .intro-assinatura span {
+    display: block;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 300; }

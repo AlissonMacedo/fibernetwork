@@ -121,8 +121,8 @@ export default function Residencial() {
 
       <Presentation />
 
-      <section className="vantagens-residencial swing-in-top-fwd">
-        <h1>Benefícios</h1>
+      <section className="vantagens-residencial swing-in-top-fwd mt-12">
+        <h1>Vantagens</h1>
         <h2>Banda Larga Residencial</h2>
         <div className="vantagens-residencial__content">
           <div className="vantagens-residencial__card">

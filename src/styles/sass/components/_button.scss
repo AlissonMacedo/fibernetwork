@@ -2,8 +2,8 @@
   &,
   &:link,
   &:visited {
-    padding: 1rem 5rem;
-    border-radius: 4px;
+    padding: 1rem 4rem;
+    border-radius: 5rem;
     border: none;
     cursor: pointer;
     text-align: center;
@@ -64,4 +64,55 @@
   font-size: 1.8rem;
   font-family: inherit;
   font-weight: 500;
+}
+
+/**
+* Switch Button
+*/
+
+
+.switch-button{
+	width: 400px;
+	height: 40px;
+	text-align: center;
+	will-change: transform;
+	z-index: 197 !important;
+	cursor: pointer;
+	transition: .3s ease all;
+	border-radius: 20px;
+	border: 1px solid $color-white;
+	overflow: hidden;
+	&-case{
+		background: none;
+		width: 49%;
+		height: 100%;
+		color: $color-white;
+
+		border: none;
+		transition: .3s ease all;
+		text-transform: uppercase;
+		padding-bottom: 1px;
+		&:hover{
+			color: $color-darker;
+      cursor: pointer;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	.active {
+		color: $color-primary;
+		background-color: $color-white;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		z-index: -1;
+    transition: .3s ease-out all;
+
+		&-case{
+			color: $color-primary;
+		}
+	}
 }

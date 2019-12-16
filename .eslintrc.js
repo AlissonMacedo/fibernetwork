@@ -31,6 +31,11 @@ module.exports = {
     camelcase: "off",
     "no-console": ["error", { allow: ["tron"] }],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/label-has-for": [ 2, {
+      "required": {
+          "every": [ "id" ]
+      }
+  }]
   },
 };

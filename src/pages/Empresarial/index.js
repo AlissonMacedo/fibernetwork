@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IoMdCheckmark, IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import { FaConnectdevelop } from 'react-icons/fa';
-import { MdWatchLater, MdApps, MdDevices } from 'react-icons/md';
-import {
-  AiOutlineCloudServer,
-  AiOutlineCloudDownload,
-  AiOutlineCloudUpload,
-  AiOutlineClockCircle,
-  AiOutlineLineChart,
-} from 'react-icons/ai';
+import { MdWatchLater, MdApps } from 'react-icons/md';
+import { AiOutlineCloudServer, AiOutlineProject } from 'react-icons/ai';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ListPlanos from '../../components/ListPlanos';
 
-import { Presentation } from '../Residencial/styles';
+import { Presentation } from './styles';
+
+import background from '../../assets/img/business-vector.png';
 
 export default function Empresarial() {
-  const planosRes = [
+  const planoBandaLarga = [
     {
       id: 1,
       plano: 20,
@@ -50,183 +47,151 @@ export default function Empresarial() {
     },
   ];
 
+  const vantagemBL = [
+    {
+      id: 1,
+      icon: <IoMdCheckmarkCircleOutline color="#f70" size={60} />,
+      title: 'Garantia de 70% da banda contratada',
+    },
+    {
+      id: 2,
+      icon: <FaConnectdevelop color="#f70" size={60} />,
+      title: 'Conectividade por Fibra Óptica',
+    },
+    {
+      id: 3,
+      icon: <MdWatchLater color="#f70" size={60} />,
+      title: 'Acordo de Nível de Serviço de 1 dia útil',
+    },
+    {
+      id: 4,
+      icon: <MdApps color="#f70" size={60} />,
+      title: 'Com franquia com limites de tráfego',
+    },
+    {
+      id: 5,
+      icon: <AiOutlineCloudServer color="#f70" size={60} />,
+      title: 'Conexão com altas taxas de upload',
+    },
+    {
+      id: 6,
+      icon: <IoMdCheckmark color="#f70" size={60} />,
+      title: 'Tecnologia FTTH',
+    },
+  ];
+
+  const vantagemLD = [
+    {
+      id: 1,
+      icon: <IoMdCheckmarkCircleOutline color="#f70" size={60} />,
+      title: 'Garantia de 100% da banda contratada',
+    },
+    {
+      id: 2,
+      icon: <FaConnectdevelop color="#f70" size={60} />,
+      title: 'Conectividade por Fibra Óptica',
+    },
+    {
+      id: 3,
+      icon: <MdWatchLater color="#f70" size={60} />,
+      title: 'SLA 4hs',
+    },
+    {
+      id: 4,
+      icon: <AiOutlineProject color="#f70" size={60} />,
+      title: 'Projetos Especiais',
+    },
+    {
+      id: 5,
+      icon: <AiOutlineCloudServer color="#f70" size={60} />,
+      title: 'Download/Upload simétrico',
+    },
+    {
+      id: 6,
+      icon: <IoMdCheckmark color="#f70" size={60} />,
+      title: 'Tecnologia MetroEthernet',
+    },
+  ];
+
+  const [titlePlan, setTitlePlan] = useState('Banda Larga');
+  const [vantagens, setVantagens] = useState(vantagemBL);
+  const [planosEmp, setPlanosEmp] = useState(planoBandaLarga);
+
+  const planoLinkDedicado = [
+    {
+      id: 1,
+      dedicado: 'Planos de 10 MEGA até 1 GIGA',
+      download: '100%',
+      upload: '100%',
+      feature1: 'Garantia de 100%',
+      feature2: 'SLA: 4h',
+      feature3: 'IP Público Fixo',
+      feature4: 'Franquia Ilimitada',
+    },
+  ];
+
+  function handleBandaLarga() {
+    setPlanosEmp(planoBandaLarga);
+    setVantagens(vantagemBL);
+    setTitlePlan('Banda Larga');
+  }
+
+  function handleLinkDedicado() {
+    setPlanosEmp(planoLinkDedicado);
+    setVantagens(vantagemLD);
+    setTitlePlan('Link Dedicado');
+  }
+
   return (
     <>
       <Header />
 
-      <Presentation />
+      <Presentation>
+        <img className="tilt-in-top-1" src={background} alt="Business" />
+      </Presentation>
 
-      <section className="vantagens-residencial swing-in-top-fwd">
-        <h1>Vantagens</h1>
-        <h2>Banda Larga Empresarial</h2>
-        <div className="vantagens-residencial__content">
-          <div className="vantagens-residencial__card">
-            <IoMdCheckmarkCircleOutline color="#f70" size={60} />
-            <p>
-              Garantia de 70% da <br />
-              banda contratada
-            </p>
-          </div>
+      <div className="nossos-planos mb-middle tracking-in-expand">
+        <h1>Nossos Planos</h1>
+        <h2>Empresariais</h2>
 
-          <div className="vantagens-residencial__card">
-            <FaConnectdevelop color="#f70" size={60} />
-            <p>
-              Conectividade por <br />
-              Fibra Óptica
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <MdWatchLater color="#f70" size={60} />
-            <p>
-              Acordo de Nível de Serviço <br />
-              de 1 dia útil
-            </p>
-          </div>
-        </div>
-
-        <div className="vantagens-residencial__content">
-          <div className="vantagens-residencial__card">
-            <MdApps color="#f70" size={60} />
-            <p>
-              Com franquia <br />
-              (com limites de tráfego)
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <AiOutlineCloudServer color="#f70" size={60} />
-            <p>
-              Conexão com altas <br />
-              taxas de upload
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <IoMdCheckmark color="#f70" size={60} />
-            <p>Tecnologia FTTH</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="plan mt-big">
-        {/* <button
+        <div className="switch-button mt-middle">
+          <span className="active" />
+          <button
             type="button"
-            onClick={() => {}}
-            className="plan__btnBox btn-orange"
+            onClick={handleBandaLarga}
+            className="switch-button-case left active-case"
           >
-            <span>Residencial</span>
+            <span>Banda Larga</span>
           </button>
 
           <button
             type="button"
-            onClick={() => {}}
-            className="plan__btnBox btn-orange"
+            onClick={handleLinkDedicado}
+            className="switch-button-case right"
           >
-            <span>Empresarial</span>
-          </button> */}
-        <div className="plan__box">
-          {planosRes.map(p => (
-            <div key={p.id} className="card-plan-2 card-plan-2__white">
-              <div className="card-plan-2__text">
-                <h1>{p.plano}</h1>
-                <span>MEGA</span>
-              </div>
+            <span>Link Dedicado</span>
+          </button>
+        </div>
+      </div>
+      <section className="vantagens-residencial swing-in-top-fwd">
+        <h1>Vantagens</h1>
+        <h2>{titlePlan}</h2>
 
-              <ul>
-                <li>
-                  <AiOutlineCloudDownload color="#fff" size={26} />
-                  <span>{p.download} MB download</span>
-                </li>
-
-                <li>
-                  <AiOutlineCloudUpload color="#fff" size={26} />
-                  <span>{p.upload} MB upload</span>
-                </li>
-
-                <li>
-                  <IoMdCheckmark color="#fff" size={26} />
-                  <span>{p.feature1}</span>
-                </li>
-
-                <li>
-                  <AiOutlineClockCircle color="#fff" size={26} />
-                  <span>{p.feature2}</span>
-                </li>
-
-                <li>
-                  <MdDevices color="#fff" size={26} />
-                  <span>{p.feature3}</span>
-                </li>
-
-                <li>
-                  <AiOutlineLineChart color="#fff" size={26} />
-                  <span>{p.feature4}</span>
-                </li>
-
-                <button
-                  type="button"
-                  onClick={() => {}}
-                  className="plan__btnBox btn-white mt-small"
-                >
-                  <span>Assinar</span>
-                </button>
-              </ul>
+        <div className="vantagens-residencial__content">
+          {vantagens.map(item => (
+            <div key={item.id} className="vantagens-residencial__card">
+              {item.icon}
+              <p>{item.title}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="vantagens-residencial swing-in-top-fwd">
-        <h1>Vantagens</h1>
-        <h2>Link Dedicado</h2>
-        <div className="vantagens-residencial__content">
-          <div className="vantagens-residencial__card">
-            <IoMdCheckmarkCircleOutline color="#f70" size={60} />
-            <p>
-              Garantia de 70% da <br />
-              banda contratada
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <FaConnectdevelop color="#f70" size={60} />
-            <p>
-              Conectividade por <br />
-              Fibra Óptica
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <MdWatchLater color="#f70" size={60} />
-            <p>
-              Acordo de Nível de Serviço <br />
-              de 1 dia útil
-            </p>
-          </div>
-        </div>
-
-        <div className="vantagens-residencial__content">
-          <div className="vantagens-residencial__card">
-            <MdApps color="#f70" size={60} />
-            <p>
-              Com franquia <br />
-              (com limites de tráfego)
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <AiOutlineCloudServer color="#f70" size={60} />
-            <p>
-              Conexão com altas <br />
-              taxas de upload
-            </p>
-          </div>
-
-          <div className="vantagens-residencial__card">
-            <IoMdCheckmark color="#f70" size={60} />
-            <p>Tecnologia FTTH</p>
-          </div>
+      <section className="plan">
+        <div className="plan__box">
+          {planosEmp.map(p => (
+            <ListPlanos data={p} />
+          ))}
         </div>
       </section>
 
