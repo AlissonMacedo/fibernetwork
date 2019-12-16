@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { IoMdCheckmark } from 'react-icons/io';
 import { MdDevices } from 'react-icons/md';
@@ -8,6 +9,9 @@ import {
   AiOutlineClockCircle,
   AiOutlineLineChart,
 } from 'react-icons/ai';
+
+import history from '../../services/history';
+
 // import { Container } from './styles';
 
 export default function ListPlanos({ data }) {
@@ -55,13 +59,12 @@ export default function ListPlanos({ data }) {
           <span>{data.feature4}</span>
         </li>
 
-        <button
-          type="button"
-          onClick={() => {}}
+        <Link
+          to={data.tipo === 'residencial' ? '/assinatura' : '/'}
           className="plan__btnBox btn-white mt-small"
         >
           <span>Assinar</span>
-        </button>
+        </Link>
       </ul>
     </div>
   );

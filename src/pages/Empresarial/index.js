@@ -17,6 +17,7 @@ export default function Empresarial() {
   const planoBandaLarga = [
     {
       id: 1,
+      tipo: 'empresarial',
       plano: 20,
       download: 20,
       upload: 10,
@@ -27,6 +28,7 @@ export default function Empresarial() {
     },
     {
       id: 2,
+      tipo: 'empresarial',
       plano: 50,
       download: 50,
       upload: 25,
@@ -37,6 +39,7 @@ export default function Empresarial() {
     },
     {
       id: 3,
+      tipo: 'empresarial',
       plano: 100,
       download: 100,
       upload: 50,
@@ -117,9 +120,12 @@ export default function Empresarial() {
   const [vantagens, setVantagens] = useState(vantagemBL);
   const [planosEmp, setPlanosEmp] = useState(planoBandaLarga);
 
+  const [active, setActive] = useState(false);
+
   const planoLinkDedicado = [
     {
       id: 1,
+      tipo: 'empresarial',
       dedicado: 'Planos de 10 MEGA até 1 GIGA',
       download: '100%',
       upload: '100%',
@@ -134,12 +140,14 @@ export default function Empresarial() {
     setPlanosEmp(planoBandaLarga);
     setVantagens(vantagemBL);
     setTitlePlan('Banda Larga');
+    setActive(active);
   }
 
   function handleLinkDedicado() {
     setPlanosEmp(planoLinkDedicado);
     setVantagens(vantagemLD);
     setTitlePlan('Link Dedicado');
+    setActive(!active);
   }
 
   return (
@@ -159,7 +167,9 @@ export default function Empresarial() {
           <button
             type="button"
             onClick={handleBandaLarga}
-            className="switch-button-case left active-case"
+            className={`switch-button-case left ${
+              !active ? 'active-base' : ''
+            }`}
           >
             <span>Banda Larga</span>
           </button>
@@ -167,7 +177,9 @@ export default function Empresarial() {
           <button
             type="button"
             onClick={handleLinkDedicado}
-            className="switch-button-case right"
+            className={`switch-button-case right ${
+              active ? 'active-base' : ''
+            }`}
           >
             <span>Link Dedicado</span>
           </button>
@@ -190,7 +202,7 @@ export default function Empresarial() {
       <section className="plan">
         <div className="plan__box">
           {planosEmp.map(p => (
-            <ListPlanos data={p} />
+            <ListPlanos data={p} key={p.id} />
           ))}
         </div>
       </section>

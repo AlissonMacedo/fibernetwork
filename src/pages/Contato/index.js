@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { Form, Input } from '@rocketseat/unform';
 import { MdEmail, MdLocationOn, MdGroup, MdPhonelink } from 'react-icons/md';
 import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 
@@ -91,13 +93,13 @@ export default function Contato() {
       </section>
 
       <section className="section-formContato">
-        <form onSubmit={() => {}} className="form" method="POST">
+        <Form onSubmit={() => {}} className="form">
           <div className="section-contato__text-box mb-small">
             <h2>Dados Pessoais</h2>
           </div>
 
           <div className="form__group">
-            <input
+            <Input
               type="text"
               className="form__input"
               placeholder="Nome Completo"
@@ -111,7 +113,7 @@ export default function Contato() {
           </div>
 
           <div className="form__group">
-            <input
+            <Input
               type="email"
               className="form__input"
               placeholder="Seu melhor email"
@@ -125,7 +127,7 @@ export default function Contato() {
           </div>
 
           <div className="form__group">
-            <input
+            <Input
               placeholder="(xx) x xxxx.xxxx"
               type="text"
               className="form__input"
@@ -139,7 +141,7 @@ export default function Contato() {
           </div>
 
           <div className="form__group">
-            <input
+            <Input
               type="text"
               className="form__input"
               placeholder="Digite a sua mensagem..."
@@ -157,7 +159,7 @@ export default function Contato() {
               <span>Enviar sua mensagem</span>
             </button>
           </div>
-        </form>
+        </Form>
       </section>
       {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path

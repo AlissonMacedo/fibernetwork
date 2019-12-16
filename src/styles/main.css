@@ -420,7 +420,7 @@ button {
       .form__group:not(:last-child) {
         width: 100%; } }
   .form .group-width {
-    width: 30%; }
+    width: 100%; }
     @media (max-width: 37.5em) {
       .form .group-width {
         width: 100%; } }
@@ -503,11 +503,15 @@ button {
     font-size: 1.6rem;
     color: #f26425;
     transition: all 0.3s;
-    font-weight: 600; }
+    font-weight: 500; }
   .form__input:placeholder-shown + .form__label {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-3rem); }
+
+.form-box {
+  display: flex;
+  flex-direction: row; }
 
 .row {
   max-width: 114rem;
@@ -530,16 +534,13 @@ button {
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
-    width: calc(
- 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc(
- 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc(
- 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .footer {
   padding: 8rem 4rem 5rem 4rem;
@@ -674,6 +675,29 @@ button {
       border-radius: 0.5rem;
       cursor: pointer;
       color: #f26425; }
+
+.intro-areaCliente {
+  margin-top: 8rem;
+  height: 65%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15rem;
+  background: #f26425;
+  background: -webkit-linear-gradient(to right, #f26425, #ed8f03);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f26425, #ed8f03);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .intro-areaCliente p {
+    color: #fff;
+    font-size: 4rem; }
+  .intro-areaCliente__description {
+    display: block;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300; }
 
 .plan {
   padding: 5rem;
@@ -854,9 +878,8 @@ button {
         opacity: 0.6; }
 
 .section-formContato {
-  padding: 15rem;
-  height: 100%;
-  background-image: linear-gradient(103.3deg, #fd6d68 7.7%, rgba(248, 71, 38, 0.8) 90.8%); }
+  width: 50%;
+  margin: 0 auto; }
 
 .tracking-in-expand {
   -webkit-animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -967,7 +990,7 @@ button {
   .intro-assinatura p {
     color: #fff;
     font-size: 5rem; }
-  .intro-assinatura span {
+  .intro-assinatura__description {
     display: block;
     color: #fff;
     font-size: 4rem;

@@ -1,52 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { IoMdCheckmark, IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import { FaConnectdevelop } from 'react-icons/fa';
-import { MdWatchLater, MdApps, MdDevices } from 'react-icons/md';
-import {
-  AiOutlineCloudServer,
-  AiOutlineCloudDownload,
-  AiOutlineCloudUpload,
-  AiOutlineClockCircle,
-  AiOutlineLineChart,
-} from 'react-icons/ai';
+import { MdWatchLater, MdApps } from 'react-icons/md';
+import { AiOutlineCloudServer } from 'react-icons/ai';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import ListPlanos from '../../components/ListPlanos';
 
 import { Presentation } from './styles';
 
 export default function Residencial() {
-  const [planos, setPlanos] = useState([
-    {
-      id: 1,
-      plano: 50,
-      download: 50,
-      upload: 20,
-    },
-    {
-      id: 2,
-      plano: 100,
-      download: 100,
-      upload: 20,
-    },
-    {
-      id: 3,
-      plano: 200,
-      download: 200,
-      upload: 20,
-    },
-    {
-      id: 4,
-      plano: 300,
-      download: 300,
-      upload: 20,
-    },
-  ]);
-
   const planosRes = [
     {
       id: 1,
+      tipo: 'residencial',
       plano: 50,
       download: 50,
       upload: 20,
@@ -57,6 +26,7 @@ export default function Residencial() {
     },
     {
       id: 2,
+      tipo: 'residencial',
       plano: 100,
       download: 100,
       upload: 40,
@@ -67,6 +37,7 @@ export default function Residencial() {
     },
     {
       id: 3,
+      tipo: 'residencial',
       plano: 200,
       download: 200,
       upload: 80,
@@ -77,6 +48,7 @@ export default function Residencial() {
     },
     {
       id: 4,
+      tipo: 'residencial',
       plano: 300,
       download: 300,
       upload: 120,
@@ -87,34 +59,6 @@ export default function Residencial() {
     },
   ];
 
-  const planosEmp = [
-    {
-      id: 1,
-      plano: 20,
-      download: 50,
-      upload: 20,
-    },
-    {
-      id: 2,
-      plano: 50,
-      download: 100,
-      upload: 20,
-    },
-    {
-      id: 3,
-      plano: 100,
-      download: 200,
-      upload: 20,
-    },
-  ];
-
-  // function handlePlanoResidencial() {
-  //   setPlanos(planosRes);
-  // }
-
-  // function handlePlanoEmpresarial() {
-  //   setPlanos(planosEmp);
-  // }
   return (
     <>
       <Header />
@@ -177,52 +121,7 @@ export default function Residencial() {
       <section className="plan mt-big">
         <div className="plan__box">
           {planosRes.map(p => (
-            <div key={p.id} className="card-plan-2 card-plan-2__white">
-              <div className="card-plan-2__text">
-                <h1>{p.plano}</h1>
-                <span>MEGA</span>
-              </div>
-
-              <ul>
-                <li>
-                  <AiOutlineCloudDownload color="#fff" size={26} />
-                  <span>{p.download} MB download</span>
-                </li>
-
-                <li>
-                  <AiOutlineCloudUpload color="#fff" size={26} />
-                  <span>{p.upload} MB upload</span>
-                </li>
-
-                <li>
-                  <IoMdCheckmark color="#fff" size={26} />
-                  <span>{p.feature1}</span>
-                </li>
-
-                <li>
-                  <AiOutlineClockCircle color="#fff" size={26} />
-                  <span>{p.feature2}</span>
-                </li>
-
-                <li>
-                  <MdDevices color="#fff" size={26} />
-                  <span>{p.feature3}</span>
-                </li>
-
-                <li>
-                  <AiOutlineLineChart color="#fff" size={26} />
-                  <span>{p.feature4}</span>
-                </li>
-
-                <button
-                  type="button"
-                  onClick={() => {}}
-                  className="plan__btnBox btn-white mt-small"
-                >
-                  <span>Assinar</span>
-                </button>
-              </ul>
-            </div>
+            <ListPlanos data={p} key={p.id} />
           ))}
         </div>
       </section>

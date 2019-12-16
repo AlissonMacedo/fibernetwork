@@ -19,7 +19,7 @@
   }
 
   .group-width {
-    width: 30%;
+    width: 100%;
 
     @include respond(phone) {
       width: 100%;
@@ -130,7 +130,7 @@
     font-size: 1.6rem;
     color: $color-primary;
     transition: all 0.3s;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   &__input:placeholder-shown + &__label {
@@ -138,4 +138,9 @@
     visibility: hidden;
     transform: translateY(-3rem);
   }
+}
+
+.form-box {
+  display: flex;
+  flex-direction: row;
 }
