@@ -140,7 +140,7 @@ export default function Empresarial() {
     setPlanosEmp(planoBandaLarga);
     setVantagens(vantagemBL);
     setTitlePlan('Banda Larga');
-    setActive(active);
+    setActive(!active);
   }
 
   function handleLinkDedicado() {
@@ -148,6 +148,12 @@ export default function Empresarial() {
     setVantagens(vantagemLD);
     setTitlePlan('Link Dedicado');
     setActive(!active);
+  }
+
+  function handleMudaButton() {
+    setActive(!active);
+    handleBandaLarga();
+    handleLinkDedicado();
   }
 
   return (
@@ -162,24 +168,28 @@ export default function Empresarial() {
         <h1>Nossos Planos</h1>
         <h2>Empresariais</h2>
 
-        <div className="switch-button mt-middle">
-          <span className="active" />
+        <div className="switch-button mt-small">
+          <span className={!active ? 'active' : 'active fide-left'} />
           <button
             type="button"
-            onClick={handleBandaLarga}
-            className={`switch-button-case left ${
-              !active ? 'active-base' : ''
-            }`}
+            onClick={handleMudaButton}
+            className={
+              active
+                ? 'switch-button-case left'
+                : 'switch-button-case left active-case'
+            }
           >
             <span>Banda Larga</span>
           </button>
 
           <button
             type="button"
-            onClick={handleLinkDedicado}
-            className={`switch-button-case right ${
-              active ? 'active-base' : ''
-            }`}
+            onClick={handleMudaButton}
+            className={
+              active
+                ? 'switch-button-case right active-case'
+                : 'switch-button-case right'
+            }
           >
             <span>Link Dedicado</span>
           </button>

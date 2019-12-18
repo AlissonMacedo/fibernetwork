@@ -300,12 +300,12 @@ export default function Estrangeiro() {
           <Select
             className="form__input"
             placeholder="Como conheceu nossa empresa"
-            id="cidade"
-            name="cidade"
+            id="sobre"
+            name="sobre"
             options={options}
           />
 
-          <label htmlFor="cidade" className="form__label">
+          <label htmlFor="sobre" className="form__label">
             Como Conheceu nossa empresa
           </label>
         </div>
@@ -319,7 +319,7 @@ export default function Estrangeiro() {
             name="mensagem"
             required
           />
-          <label htmlFor="cidade" className="form__label">
+          <label htmlFor="mensagem" className="form__label">
             Mensagem
           </label>
         </div>

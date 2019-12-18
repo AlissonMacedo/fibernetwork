@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@rocketseat/unform": "^1.6.1",
+    "cpf-cnpj-validator": "^0.1.0",
     "history": "^4.10.1",
     "infinite-react-carousel": "^1.2.5",
     "react": "^16.12.0",

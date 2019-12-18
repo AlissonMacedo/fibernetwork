@@ -281,6 +281,9 @@ button {
     .switch-button .active-case {
       color: #f26425; }
 
+.fide-left {
+  left: 50% !important; }
+
 .card-feature {
   display: flex;
   flex-direction: column;
@@ -416,6 +419,10 @@ button {
       padding: 3.8rem 2rem; } }
   .form__group:not(:last-child) {
     margin-bottom: 1.3rem; }
+    .form__group:not(:last-child) > span {
+      font-size: 1.5rem;
+      color: #e37a7a;
+      font-weight: bold; }
     @media (max-width: 37.5em) {
       .form__group:not(:last-child) {
         width: 100%; } }
@@ -698,6 +705,42 @@ button {
     color: #fff;
     font-size: 3rem;
     font-weight: 300; }
+
+.area-cliente {
+  background: #fcfcfc;
+  padding: 10rem; }
+  .area-cliente p {
+    text-align: center;
+    font-size: 3rem;
+    color: #777;
+    margin-bottom: 5rem; }
+
+.teste-velocidade {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .teste-velocidade__card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: #f26425 2px solid;
+    width: 40%;
+    padding: 3rem;
+    background: #fff;
+    transition: all 0.5s;
+    margin-bottom: 2rem;
+    margin-right: 1rem; }
+    .teste-velocidade__card:hover {
+      box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.1); }
+    .teste-velocidade__card h2 {
+      margin-left: 1rem;
+      color: #777;
+      font-size: 1.5rem; }
+    .teste-velocidade__card span {
+      color: #f26425;
+      font-size: 1.5rem; }
 
 .plan {
   padding: 5rem;

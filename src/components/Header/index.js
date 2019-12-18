@@ -35,7 +35,9 @@ export default function Header() {
                 <Link to="/contato">Contato</Link>
               </li>
 
-              <li>Área do Cliente</li>
+              <li>
+                <Link to="/area-cliente">Área do Cliente</Link>
+              </li>
 
               <li>|</li>
 

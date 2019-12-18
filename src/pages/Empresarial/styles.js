@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 // import background from '../../assets/img/business-vector.png';
 
 export const Presentation = styled.section`

@@ -66,7 +66,7 @@ export default function Home() {
             <IoMdCheckmark color="#f26425" /> Conexão com altas taxas de upload
           </span>
 
-          <Link to="/residencial" className="plan__btnBox btn-orange mt-middle">
+          <Link to="/residencial" className="plan__btnBox btn-orange">
             Ver planos
           </Link>
         </div>
