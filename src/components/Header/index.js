@@ -1,11 +1,11 @@
 import React from 'react';
-import { MdPhonelink, MdBusiness } from 'react-icons/md';
+// import { MdPhonelink, MdBusiness } from 'react-icons/md';
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/img/logo_fiber.png';
-import { Container, Dropdown } from './styles';
+import { Container } from './styles';
 
 export default function Header() {
   return (

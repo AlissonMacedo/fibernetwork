@@ -7,4 +7,8 @@ export const Presentation = styled.section`
   background-size: cover;
   height: 100%;
   background-position: center;
+
+  @media (max-width: 768px) {
+    height: 80%;
+  }
 `;

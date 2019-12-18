@@ -21,8 +21,16 @@ export const Presentation = styled.section`
   justify-content: flex-end;
   align-items: center;
 
+  @media (max-width: 768px) {
+    height: 80%;
+  }
+
   img {
     height: 45rem;
     margin: 0 10rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 `;

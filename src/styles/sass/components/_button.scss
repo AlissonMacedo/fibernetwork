@@ -81,7 +81,12 @@
 	transition: .3s ease all;
 	border-radius: 20px;
 	border: 1px solid $color-white;
-	overflow: hidden;
+  overflow: hidden;
+
+  @include respond(tab-port) {
+    width: 350px;
+  }
+
 	&-case{
 		background: none;
 		width: 49%;

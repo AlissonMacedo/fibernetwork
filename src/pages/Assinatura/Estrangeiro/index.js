@@ -264,9 +264,7 @@ export default function Fisica() {
             name="complemento"
           />
         </div>
-      </div>
 
-      <div className="form-box">
         <div className="form__group group-width">
           <Input
             type="text"
@@ -278,7 +276,9 @@ export default function Fisica() {
             onChange={() => {}}
           />
         </div>
+      </div>
 
+      <div className="form-box">
         <div className="form__group group-width">
           <Input
             type="text"
@@ -302,9 +302,7 @@ export default function Fisica() {
             onChange={() => {}}
           />
         </div>
-      </div>
 
-      <div className="form-box">
         <div className="form__group group-width">
           <Select
             className="form__input"

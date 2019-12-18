@@ -29,7 +29,7 @@ function verificarCnpj(cnpj) {
     if (pos < 2) pos = 9;
   }
   let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
-  if (resultado != digitos.charAt(0)) return false;
+  if (resultado !== digitos.charAt(0)) return false;
   tamanho += 1;
   numeros = cnpj.substring(0, tamanho);
   soma = 0;
@@ -39,15 +39,11 @@ function verificarCnpj(cnpj) {
     if (pos < 2) pos = 9;
   }
   resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
-  if (resultado != digitos.charAt(1)) return false;
+  if (resultado !== digitos.charAt(1)) return false;
 
   return true;
 }
 
 export default function validarCNPJ(cnpj) {
-  if (!verificarCnpj(cnpj)) {
-    console.log('invalido');
-  } else {
-    console.log('valido');
-  }
+  return !verificarCnpj(cnpj) ? 'CNPJ inválido' : 'CNPJ válido';
 }

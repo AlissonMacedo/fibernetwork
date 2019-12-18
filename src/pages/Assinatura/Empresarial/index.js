@@ -4,7 +4,7 @@ import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import axios from 'axios';
 
-import Valida from '../../../utils/validaCpf';
+import validarCNPJ from '../../../utils/ValidaCnpj';
 
 export default function Fisica() {
   const schema = Yup.object().shape({
@@ -17,15 +17,9 @@ export default function Fisica() {
     telefoneOpcional: Yup.string(),
     dataNascimento: Yup.string().required('Informe a sua data de nascimento'),
     estadoCivil: Yup.string().required('Informe seu estado civil'),
-    cpf: Yup.string()
-      .length(11, 'O CPF deverá conter somente 11 caracteres')
+    cnpj: Yup.string()
+      .length(14, 'O CNPJ deverá conter somente 14 caracteres')
       .required('O CPF é obrigatório'),
-    rg: Yup.string()
-      .min(8)
-      .required('O RG é obrigatório'),
-    orgExpeditor: Yup.string()
-      .uppercase()
-      .required('Informe qual o orgão expeditor'),
     planoResidencial: Yup.string().required(),
     taxa: Yup.string().required('Selecione a sua forma de pagamento'),
     dataVencimento: Yup.string().required('Seleciona o dia do vencimento'),
@@ -76,7 +70,7 @@ export default function Fisica() {
     { id: 'plano300', title: 'Plano Residencial - 300 MB' },
   ];
 
-  const [checkCpf, setCheckCpf] = useState('');
+  const [checkCnpj, setCheckCnpj] = useState('');
   const [cep, setCep] = useState('');
 
   const [dataCep, setDataCep] = useState({});
@@ -94,9 +88,9 @@ export default function Fisica() {
     loadCep();
   }, [cep]);
 
-  function handleCheckCpf(e) {
-    const response = Valida(e.target.value);
-    setCheckCpf(response);
+  function handleCheckCnpj(e) {
+    const response = validarCNPJ(e.target.value);
+    setCheckCnpj(response);
   }
 
   function handleSubmit(data) {
@@ -108,8 +102,7 @@ export default function Fisica() {
       <section className="intro-assinatura">
         <p>Falta pouco!</p>
         <span className="intro-assinatura__description">
-          Escolha uma das opções abaixo e preencha o formulário, que a nosso
-          equipe entrará em contato.
+          Preencha o formulário, que a nosso equipe entrará em contato.
         </span>
       </section>
       <Form schema={schema} onSubmit={handleSubmit} className="form">
@@ -149,9 +142,19 @@ export default function Fisica() {
             <Input
               type="email"
               className="form__input"
-              placeholder="Seu email opcional"
+              placeholder="Email opcional"
               id="emailOpcional"
               name="emailOpcional"
+            />
+          </div>
+
+          <div className="form__group group-width">
+            <Input
+              type="text"
+              className="form__input"
+              placeholder="Telefone principal"
+              id="telefone"
+              name="telefone"
             />
           </div>
         </div>
@@ -161,9 +164,9 @@ export default function Fisica() {
             <Input
               type="text"
               className="form__input"
-              placeholder="Seu Telefone principal"
-              id="telefone"
-              name="telefone"
+              placeholder="Telefone (Opcional)"
+              id="telefoneOpcional"
+              name="telefoneOpcional"
             />
           </div>
 
@@ -171,10 +174,12 @@ export default function Fisica() {
             <Input
               type="text"
               className="form__input"
-              placeholder="Seu Telefone (Opcional)"
-              id="telefoneOpcional"
-              name="telefoneOpcional"
+              id="cnpj"
+              name="cnpj"
+              onChange={handleCheckCnpj}
             />
+            <br />
+            <span>{checkCnpj}</span>
           </div>
 
           <div className="form__group group-width">
@@ -190,33 +195,9 @@ export default function Fisica() {
             <Input
               type="text"
               className="form__input"
-              placeholder="Estado Civil"
-              id="estadoCivil"
-              name="estadoCivil"
-            />
-          </div>
-        </div>
-
-        <div className="form-box">
-          <div className="form__group group-width">
-            <Input
-              type="text"
-              className="form__input"
-              id="cpf"
-              name="cpf"
-              onChange={handleCheckCpf}
-            />
-            <br />
-            <span>{checkCpf}</span>
-          </div>
-
-          <div className="form__group group-width">
-            <Input
-              type="text"
-              className="form__input"
-              placeholder="Rg"
-              id="rg"
-              name="rg"
+              placeholder="Inscrição Estadual"
+              id="inscEstadual"
+              name="inscEstadual"
             />
           </div>
 
@@ -224,9 +205,9 @@ export default function Fisica() {
             <Input
               type="text"
               className="form__input"
-              placeholder="Orgão Expeditor"
-              id="orgExpeditor"
-              name="orgExpeditor"
+              placeholder="Inscrição Municipal"
+              id="inscMunicipal"
+              name="inscMunicipal"
             />
           </div>
         </div>
@@ -314,9 +295,7 @@ export default function Fisica() {
               name="complemento"
             />
           </div>
-        </div>
 
-        <div className="form-box">
           <div className="form__group group-width">
             <Input
               type="text"
@@ -328,7 +307,9 @@ export default function Fisica() {
               onChange={() => {}}
             />
           </div>
+        </div>
 
+        <div className="form-box">
           <div className="form__group group-width">
             <Input
               type="text"
@@ -352,9 +333,7 @@ export default function Fisica() {
               onChange={() => {}}
             />
           </div>
-        </div>
 
-        <div className="form-box">
           <div className="form__group group-width">
             <Select
               className="form__input"
