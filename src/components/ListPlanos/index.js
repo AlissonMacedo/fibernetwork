@@ -10,8 +10,6 @@ import {
   AiOutlineLineChart,
 } from 'react-icons/ai';
 
-import history from '../../services/history';
-
 // import { Container } from './styles';
 
 export default function ListPlanos({ data }) {
@@ -60,7 +58,11 @@ export default function ListPlanos({ data }) {
         </li>
 
         <Link
-          to={data.tipo === 'residencial' ? '/assinatura' : '/'}
+          to={
+            data.tipo === 'residencial'
+              ? '/assinatura'
+              : '/assinatura-empresarial'
+          }
           className="plan__btnBox btn-white mt-small"
         >
           <span>Assinar</span>

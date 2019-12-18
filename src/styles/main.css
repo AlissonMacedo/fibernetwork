@@ -417,12 +417,16 @@ button {
   @media (max-width: 56.25em) {
     .form {
       padding: 3.8rem 2rem; } }
+  .form__group > span {
+    font-size: 1.5rem;
+    color: #e37a7a;
+    font-weight: bold; }
+  .form__group .msg-sucess {
+    font-size: 1.5rem;
+    color: #9dca83;
+    font-weight: bold; }
   .form__group:not(:last-child) {
     margin-bottom: 1.3rem; }
-    .form__group:not(:last-child) > span {
-      font-size: 1.5rem;
-      color: #e37a7a;
-      font-weight: bold; }
     @media (max-width: 37.5em) {
       .form__group:not(:last-child) {
         width: 100%; } }
@@ -725,7 +729,7 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    border-left: #f26425 2px solid;
+    border-left: #f26425 3px solid;
     width: 40%;
     padding: 3rem;
     background: #fff;

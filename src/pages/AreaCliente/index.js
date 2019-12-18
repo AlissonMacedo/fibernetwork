@@ -1,13 +1,9 @@
 import React from 'react';
 import { FaConnectdevelop } from 'react-icons/fa';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-
 export default function AreaCliente() {
   return (
     <>
-      <Header />
       <section className="intro-areaCliente tracking-in-expand">
         <p>Área do Cliente</p>
         <span className="intro-areaCliente__description">
@@ -121,7 +117,6 @@ export default function AreaCliente() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

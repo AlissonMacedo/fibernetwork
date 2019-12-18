@@ -17,7 +17,7 @@ export default function Header() {
           </Link>
           <nav>
             <ul>
-              <li>
+              {/* <li>
                 Nossos planos
                 <Dropdown>
                   <li>
@@ -29,6 +29,13 @@ export default function Header() {
                     <Link to="/residencial">Para Sua Empresa</Link>
                   </li>
                 </Dropdown>
+              </li> */}
+              <li>
+                <Link to="/residencial">Pra Você</Link>
+              </li>
+
+              <li>
+                <Link to="/empresarial">Empresas</Link>
               </li>
 
               <li>

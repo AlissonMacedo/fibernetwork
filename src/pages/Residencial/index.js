@@ -5,8 +5,6 @@ import { FaConnectdevelop } from 'react-icons/fa';
 import { MdWatchLater, MdApps } from 'react-icons/md';
 import { AiOutlineCloudServer } from 'react-icons/ai';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import ListPlanos from '../../components/ListPlanos';
 
 import { Presentation } from './styles';
@@ -61,8 +59,6 @@ export default function Residencial() {
 
   return (
     <>
-      <Header />
-
       <Presentation />
 
       <section className="vantagens-residencial swing-in-top-fwd mt-12">
@@ -125,8 +121,6 @@ export default function Residencial() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

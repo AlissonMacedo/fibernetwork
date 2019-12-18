@@ -1,19 +1,44 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
-// import { Container } from './styles';
+import axios from 'axios';
+
+import Valida from '../../../utils/validaCpf';
 
 export default function Fisica() {
   const schema = Yup.object().shape({
     nome: Yup.string().required('O nome é obrigatório'),
+    sexo: Yup.string().required('O sexo é obrigatório'),
     email: Yup.string()
       .email('Insira um e-mail válido')
       .required('O e-mail é obrigatório'),
-    telefone: Yup.string().required('O telefone é obrigatório'),
-    cpf: Yup.string().required('O CPF é obrigatório'),
-    rg: Yup.string().required('O RG é obrigatório'),
-    orgExpeditor: Yup.string().required('Informe qual o orgão expeditor'),
+    emailOpcional: Yup.string().email('Insira um e-mail válido'),
+    telefone: Yup.string().required('O telefone principal é obrigatório'),
+    telefoneOpcional: Yup.string(),
+    dataNascimento: Yup.string().required('Informe a sua data de nascimento'),
+    estadoCivil: Yup.string().required('Informe seu estado civil'),
+    cpf: Yup.string()
+      .length(11, 'O CPF deverá conter somente 11 caracteres')
+      .required('O CPF é obrigatório'),
+    rg: Yup.string()
+      .min(8)
+      .required('O RG é obrigatório'),
+    orgExpeditor: Yup.string()
+      .uppercase()
+      .required('Informe qual o orgão expeditor'),
+    planoResidencial: Yup.string().required(),
+    taxa: Yup.string().required('Selecione a sua forma de pagamento'),
+    dataVencimento: Yup.string().required('Seleciona o dia do vencimento'),
+    cep: Yup.string().required('Informe o ceu CEP'),
+    endereco: Yup.string().required('Informe o seu endereço'),
+    complemento: Yup.string().required('Informe o complemento do seu endereço'),
+    numero: Yup.string().required('Informe o número'),
+    bairro: Yup.string().required('Informe o seu bairro'),
+    cidade: Yup.string().required('Informe a sua cidade'),
+    estado: Yup.string().required('informe o seu Estado'),
+    sobre: Yup.string().required('Informe como você nos conheceu'),
+    mensagem: Yup.string(),
   });
 
   const options = [
@@ -52,6 +77,34 @@ export default function Fisica() {
     { id: 'plano300', title: 'Plano Residencial - 300 MB' },
   ];
 
+  const sexo = [
+    { id: 'Masculino', title: 'Masculino' },
+    { id: 'Feminino', title: 'Feminino' },
+  ];
+
+  const [checkCpf, setCheckCpf] = useState('');
+  const [cep, setCep] = useState('');
+
+  const [dataCep, setDataCep] = useState({});
+
+  useEffect(() => {
+    async function loadCep() {
+      if (cep.length === 8) {
+        const response = await axios.get(
+          `https://viacep.com.br/ws/${cep}/json/`
+        );
+
+        setDataCep(response.data);
+      }
+    }
+    loadCep();
+  }, [cep]);
+
+  function handleCheckCpf(e) {
+    const response = Valida(e.target.value);
+    setCheckCpf(response);
+  }
+
   function handleSubmit(data) {
     console.log(data);
   }
@@ -59,7 +112,7 @@ export default function Fisica() {
   return (
     <Form schema={schema} onSubmit={handleSubmit} className="form">
       <div className="section-contato__text-box mb-small">
-        <h1>Dados Pessaaaaaoais</h1>
+        <h1>Dados Pessoais</h1>
       </div>
 
       <div className="form-box">
@@ -74,10 +127,13 @@ export default function Fisica() {
         </div>
 
         <div className="form__group group-width">
-          <select type="text" className="form__input" id="sexo" name="sexo">
-            <option>M</option>
-            <option>F</option>
-          </select>
+          <Select
+            className="form__input"
+            placeholder="Sexo"
+            id="sexo"
+            name="sexo"
+            options={sexo}
+          />
         </div>
 
         <div className="form__group group-width">
@@ -144,11 +200,25 @@ export default function Fisica() {
 
       <div className="form-box">
         <div className="form__group group-width">
-          <Input type="text" className="form__input" id="cpf" name="cpf" />
+          <Input
+            type="text"
+            className="form__input"
+            id="cpf"
+            name="cpf"
+            onChange={handleCheckCpf}
+          />
+          <br />
+          <span>{checkCpf}</span>
         </div>
 
         <div className="form__group group-width">
-          <Input type="text" className="form__input" id="rg" name="rg" />
+          <Input
+            type="text"
+            className="form__input"
+            placeholder="Rg"
+            id="rg"
+            name="rg"
+          />
         </div>
 
         <div className="form__group group-width">
@@ -170,8 +240,9 @@ export default function Fisica() {
         <div className="form__group group-width">
           <Select
             className="form__input"
-            id="plano"
-            name="plano"
+            placeholder="Seu plano residencial"
+            id="planoResidencial"
+            name="planoResidencial"
             options={plano}
           />
         </div>
@@ -179,6 +250,7 @@ export default function Fisica() {
         <div className="form__group group-width">
           <Select
             className="form__input"
+            placeholder="Tarifa de Instalação"
             id="taxa"
             name="taxa"
             options={taxa}
@@ -188,6 +260,7 @@ export default function Fisica() {
         <div className="form__group group-width">
           <Select
             className="form__input"
+            placeholder="Data de Vencimento"
             id="dataVencimento"
             name="dataVencimento"
             options={dataVencimento}
@@ -207,6 +280,7 @@ export default function Fisica() {
             className="form__input"
             id="cep"
             name="cep"
+            onChange={e => setCep(e.target.value)}
           />
         </div>
 
@@ -217,6 +291,8 @@ export default function Fisica() {
             placeholder="Rua, Av."
             id="endereco"
             name="endereco"
+            value={dataCep.logradouro || ''}
+            onChange={() => {}}
           />
         </div>
 
@@ -249,6 +325,8 @@ export default function Fisica() {
             placeholder="Bairro"
             id="bairro"
             name="bairro"
+            value={dataCep.bairro || ''}
+            onChange={() => {}}
           />
         </div>
 
@@ -259,6 +337,8 @@ export default function Fisica() {
             placeholder="Estado"
             id="estado"
             name="estado"
+            value={dataCep.uf || ''}
+            onChange={() => {}}
           />
         </div>
 
@@ -269,6 +349,8 @@ export default function Fisica() {
             placeholder="Cidade"
             id="cidade"
             name="cidade"
+            value={dataCep.localidade || ''}
+            onChange={() => {}}
           />
         </div>
       </div>

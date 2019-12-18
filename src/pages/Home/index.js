@@ -9,8 +9,6 @@ import {
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import slider1 from '../../assets/img/natal_2019.png';
 import device from '../../assets/img/device-tv.png';
 import suaEmpresa from '../../assets/img/sua-empresa.jpg';
@@ -20,35 +18,11 @@ import { Banner } from './styles';
 export default function Home() {
   return (
     <>
-      <Header />
       <Carousel showStatus={false} showThumbs={false} className="mt-big">
         <div>
           <img src={slider1} alt="Slider 01" />
         </div>
       </Carousel>
-
-      <Banner>
-        <p>
-          Não se estresse mais com sua internet, <br />
-          vem pra <strong>#Fiber!</strong>
-        </p>
-        <div className="banner__contato">
-          <h2>Assine já:</h2>
-          <button type="button" className="plan__btnBox btn-whatsapp mt-small">
-            <span>
-              <IoMdPhonePortrait />
-              Via telefone
-            </span>
-          </button>
-
-          <button type="button" className="plan__btnBox btn-whatsapp mt-small">
-            <span>
-              <IoLogoWhatsapp />
-              Via Whatsapp
-            </span>
-          </button>
-        </div>
-      </Banner>
 
       <section className="paraVoce">
         <div className="paraVoce__text">
@@ -91,7 +65,28 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      <Banner>
+        <p>
+          Não se estresse mais com sua internet, <br />
+          vem pra <strong>#Fiber!</strong>
+        </p>
+        <div className="banner__contato">
+          <h2>Assine já:</h2>
+          <button type="button" className="plan__btnBox btn-whatsapp mt-small">
+            <span>
+              <IoMdPhonePortrait />
+              Via telefone
+            </span>
+          </button>
+
+          <button type="button" className="plan__btnBox btn-whatsapp mt-small">
+            <span>
+              <IoLogoWhatsapp />
+              Via Whatsapp
+            </span>
+          </button>
+        </div>
+      </Banner>
     </>
   );
 }

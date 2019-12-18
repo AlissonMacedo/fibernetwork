@@ -1,9 +1,35 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Select } from '@rocketseat/unform';
-// import { Container } from './styles';
+import * as Yup from 'yup';
+import axios from 'axios';
 
-export default function Estrangeiro() {
+export default function Fisica() {
+  const schema = Yup.object().shape({
+    nome: Yup.string().required('O nome é obrigatório'),
+    sexo: Yup.string().required('O sexo é obrigatório'),
+    email: Yup.string()
+      .email('Insira um e-mail válido')
+      .required('O e-mail é obrigatório'),
+    emailOpcional: Yup.string().email('Insira um e-mail válido'),
+    telefone: Yup.string().required('O telefone principal é obrigatório'),
+    telefoneOpcional: Yup.string(),
+    dataNascimento: Yup.string().required('Informe a sua data de nascimento'),
+    passaporte: Yup.string().required('O Passaporte é obrigatório'),
+    planoResidencial: Yup.string().required(),
+    taxa: Yup.string().required('Selecione a sua forma de pagamento'),
+    dataVencimento: Yup.string().required('Seleciona o dia do vencimento'),
+    cep: Yup.string().required('Informe o ceu CEP'),
+    endereco: Yup.string().required('Informe o seu endereço'),
+    complemento: Yup.string().required('Informe o complemento do seu endereço'),
+    numero: Yup.string().required('Informe o número'),
+    bairro: Yup.string().required('Informe o seu bairro'),
+    cidade: Yup.string().required('Informe a sua cidade'),
+    estado: Yup.string().required('informe o seu Estado'),
+    sobre: Yup.string().required('Informe como você nos conheceu'),
+    mensagem: Yup.string(),
+  });
+
   const options = [
     { id: 'google', title: 'Google' },
     { id: 'yt', title: 'Youtube' },
@@ -18,15 +44,59 @@ export default function Estrangeiro() {
     { id: 'loja', title: 'Loja' },
   ];
 
+  const dataVencimento = [
+    { id: 'venc01', title: 'Vencimento no dia 01' },
+    { id: 'venc06', title: 'Vencimento no dia 06' },
+    { id: 'venc11', title: 'Vencimento no dia 11' },
+    { id: 'venc17', title: 'Vencimento no dia 17' },
+    { id: 'venc22', title: 'Vencimento no dia 22' },
+    { id: 'venc27', title: 'Vencimento no dia 27' },
+  ];
+
+  const taxa = [
+    { id: 'credito', title: 'Cartão de Crédito à vista' },
+    { id: 'debito', title: 'Cartão de Débito' },
+    { id: 'dinheiro', title: 'Dinheiro' },
+  ];
+
+  const plano = [
+    { id: 'plano50', title: 'Plano Residencial - 50 MB' },
+    { id: 'plano100', title: 'Plano Residencial - 100 MB' },
+    { id: 'plano200', title: 'Plano Residencial - 200 MB' },
+    { id: 'plano300', title: 'Plano Residencial - 300 MB' },
+  ];
+
+  const sexo = [
+    { id: 'Masculino', title: 'Masculino' },
+    { id: 'Feminino', title: 'Feminino' },
+  ];
+
+  const [cep, setCep] = useState('');
+
+  const [dataCep, setDataCep] = useState({});
+
+  useEffect(() => {
+    async function loadCep() {
+      if (cep.length === 8) {
+        const response = await axios.get(
+          `https://viacep.com.br/ws/${cep}/json/`
+        );
+
+        setDataCep(response.data);
+      }
+    }
+    loadCep();
+  }, [cep]);
+
+  function handleSubmit(data) {
+    console.log(data);
+  }
+
   return (
-    <Form onSubmit={() => {}} className="form">
+    <Form schema={schema} onSubmit={handleSubmit} className="form">
       <div className="section-contato__text-box mb-small">
         <h1>Dados Pessoais</h1>
       </div>
-
-      {/**
-       * Dados Pessoais
-       */}
 
       <div className="form-box">
         <div className="form__group group-width">
@@ -36,27 +106,17 @@ export default function Estrangeiro() {
             placeholder="Nome Completo"
             id="nome"
             name="nome"
-            required
           />
-          <label htmlFor="nome" className="form__label">
-            Nome Completo
-          </label>
         </div>
 
         <div className="form__group group-width">
-          <select
-            type="text"
+          <Select
             className="form__input"
+            placeholder="Sexo"
             id="sexo"
             name="sexo"
-            required
-          >
-            <option>M</option>
-            <option>F</option>
-          </select>
-          <label htmlFor="sexo" className="form__label">
-            Sexo
-          </label>
+            options={sexo}
+          />
         </div>
 
         <div className="form__group group-width">
@@ -66,11 +126,7 @@ export default function Estrangeiro() {
             placeholder="Seu melhor email"
             id="email"
             name="email"
-            required
           />
-          <label htmlFor="email" className="form__label">
-            Email
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -81,9 +137,6 @@ export default function Estrangeiro() {
             id="emailOpcional"
             name="emailOpcional"
           />
-          <label htmlFor="emailOpcional" className="form__label">
-            Email (Opcional)
-          </label>
         </div>
       </div>
 
@@ -92,26 +145,20 @@ export default function Estrangeiro() {
           <Input
             type="text"
             className="form__input"
+            placeholder="Seu Telefone principal"
             id="telefone"
             name="telefone"
-            required
           />
-          <label htmlFor="telefone" className="form__label">
-            Telefone
-          </label>
         </div>
 
         <div className="form__group group-width">
           <Input
             type="text"
             className="form__input"
+            placeholder="Seu Telefone (Opcional)"
             id="telefoneOpcional"
             name="telefoneOpcional"
-            required
           />
-          <label htmlFor="telefoneOpcional" className="form__label">
-            Telefone (Opcional)
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -120,30 +167,19 @@ export default function Estrangeiro() {
             className="form__input"
             id="dataNascimento"
             name="dataNascimento"
-            required
           />
-          <label htmlFor="dataNascimento" className="form__label">
-            Data de Nascimento
-          </label>
         </div>
 
         <div className="form__group group-width">
           <Input
             type="text"
             className="form__input"
+            placeholder="Passaporte"
             id="passaporte"
             name="passaporte"
-            required
           />
-          <label htmlFor="passaporte" className="form__label">
-            Passaporte
-          </label>
         </div>
       </div>
-
-      {/**
-       * Plano Selecionado
-       */}
 
       <div className="section-contato__text-box mb-small mt-middle">
         <h1>Plano selecionado:</h1>
@@ -151,43 +187,35 @@ export default function Estrangeiro() {
 
       <div className="form-box">
         <div className="form__group group-width">
-          <select className="form__input" id="plano" name="plano" required>
-            <option>{() => {}}</option>
-          </select>
-          <label htmlFor="plano" className="form__label">
-            veja acima
-          </label>
+          <Select
+            className="form__input"
+            placeholder="Seu plano residencial"
+            id="planoResidencial"
+            name="planoResidencial"
+            options={plano}
+          />
         </div>
 
         <div className="form__group group-width">
-          <select className="form__input" id="plano" name="plano" required>
-            <option>Cartão de Crédito à vista</option>
-            <option>Cartão de Débito</option>
-            <option>Dinheiro</option>
-          </select>
-          <label htmlFor="plano" className="form__label">
-            Tarifa de Instalação
-          </label>
+          <Select
+            className="form__input"
+            placeholder="Tarifa de Instalação"
+            id="taxa"
+            name="taxa"
+            options={taxa}
+          />
         </div>
 
         <div className="form__group group-width">
-          <select className="form__input" id="plano" name="plano" required>
-            <option>Vencimento no dia 01</option>
-            <option>Vencimento no dia 06</option>
-            <option>Vencimento no dia 11</option>
-            <option>Vencimento no dia 17</option>
-            <option>Vencimento no dia 22</option>
-            <option>Vencimento no dia 27</option>
-          </select>
-          <label htmlFor="plano" className="form__label">
-            Data de Vencimento
-          </label>
+          <Select
+            className="form__input"
+            placeholder="Data de Vencimento"
+            id="dataVencimento"
+            name="dataVencimento"
+            options={dataVencimento}
+          />
         </div>
       </div>
-
-      {/**
-       * Endereco para instalacao
-       */}
 
       <div className="section-contato__text-box mt-small mb-small mt-middle">
         <h1>Endereço para instalação</h1>
@@ -201,11 +229,8 @@ export default function Estrangeiro() {
             className="form__input"
             id="cep"
             name="cep"
-            required
+            onChange={e => setCep(e.target.value)}
           />
-          <label htmlFor="cep" className="form__label">
-            Cep
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -213,27 +238,11 @@ export default function Estrangeiro() {
             type="text"
             className="form__input"
             placeholder="Rua, Av."
-            id="rua"
-            name="rua"
-            required
+            id="endereco"
+            name="endereco"
+            value={dataCep.logradouro || ''}
+            onChange={() => {}}
           />
-          <label htmlFor="endereco" className="form__label">
-            Rua
-          </label>
-        </div>
-
-        <div className="form__group group-width">
-          <Input
-            type="text"
-            className="form__input"
-            placeholder="Bairro"
-            id="bairro"
-            name="bairro"
-            required
-          />
-          <label htmlFor="bairro" className="form__label">
-            Bairro
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -243,11 +252,17 @@ export default function Estrangeiro() {
             placeholder="Número"
             id="numero"
             name="numero"
-            required
           />
-          <label htmlFor="endereco" className="form__label">
-            Número
-          </label>
+        </div>
+
+        <div className="form__group group-width">
+          <Input
+            type="text"
+            className="form__input"
+            placeholder="Complemento"
+            id="complemento"
+            name="complemento"
+          />
         </div>
       </div>
 
@@ -256,14 +271,12 @@ export default function Estrangeiro() {
           <Input
             type="text"
             className="form__input"
-            placeholder="Complemento"
-            id="complemento"
-            name="complemento"
-            required
+            placeholder="Bairro"
+            id="bairro"
+            name="bairro"
+            value={dataCep.bairro || ''}
+            onChange={() => {}}
           />
-          <label htmlFor="complemento" className="form__label">
-            Complemento
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -273,11 +286,9 @@ export default function Estrangeiro() {
             placeholder="Estado"
             id="estado"
             name="estado"
-            required
+            value={dataCep.uf || ''}
+            onChange={() => {}}
           />
-          <label htmlFor="estado" className="form__label">
-            Estado
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -287,11 +298,9 @@ export default function Estrangeiro() {
             placeholder="Cidade"
             id="cidade"
             name="cidade"
-            required
+            value={dataCep.localidade || ''}
+            onChange={() => {}}
           />
-          <label htmlFor="cidade" className="form__label">
-            Cidade
-          </label>
         </div>
       </div>
 
@@ -304,10 +313,6 @@ export default function Estrangeiro() {
             name="sobre"
             options={options}
           />
-
-          <label htmlFor="sobre" className="form__label">
-            Como Conheceu nossa empresa
-          </label>
         </div>
 
         <div className="form__group group-width">
@@ -317,21 +322,13 @@ export default function Estrangeiro() {
             placeholder="Sua mensagem"
             id="mensage"
             name="mensagem"
-            required
           />
-          <label htmlFor="mensagem" className="form__label">
-            Mensagem
-          </label>
         </div>
       </div>
 
       <div className="form-box">
         <div className="form__group">
-          <button
-            type="submit"
-            className="btn submit btn-orange"
-            value="Enviar"
-          >
+          <button type="submit" className="btn submit btn-orange">
             Enviar
           </button>
         </div>

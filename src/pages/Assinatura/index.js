@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-
 import Estrangeiro from './Estrangeiro';
 import Fisica from './Fisica';
 // import { Container } from './styles';
@@ -11,17 +8,20 @@ import Fisica from './Fisica';
 export default function Assinatura() {
   const [tipoForm, setTipoForm] = useState('pessoaFisica');
 
+  const [active, setActive] = useState(false);
+
   function handleFormPessoaFisica() {
     setTipoForm('pessoaFisica');
+    setActive(!active);
   }
 
   function handleFormPessoaEstrangeira() {
     setTipoForm('pessoaEstrangeira');
+    setActive(!active);
   }
 
   return (
     <>
-      <Header />
       <section className="intro-assinatura">
         <p>Falta pouco!</p>
         <span className="intro-assinatura__description">
@@ -29,12 +29,16 @@ export default function Assinatura() {
           equipe entrará em contato.
         </span>
 
-        <div className="switch-button mt-middle">
-          <span className="active" />
+        <div className="switch-button mt-small">
+          <span className={!active ? 'active' : 'active fide-left'} />
           <button
             type="button"
             onClick={handleFormPessoaFisica}
-            className="switch-button-case left active-case"
+            className={
+              active
+                ? 'switch-button-case left'
+                : 'switch-button-case left active-case'
+            }
           >
             <span>Pessoa Física</span>
           </button>
@@ -42,7 +46,11 @@ export default function Assinatura() {
           <button
             type="button"
             onClick={handleFormPessoaEstrangeira}
-            className="switch-button-case right"
+            className={
+              active
+                ? 'switch-button-case right active-case'
+                : 'switch-button-case right'
+            }
           >
             <span>Pessoa Estrangeira</span>
           </button>
@@ -50,8 +58,6 @@ export default function Assinatura() {
       </section>
 
       {tipoForm === 'pessoaFisica' ? <Fisica /> : <Estrangeiro />}
-
-      <Footer />
     </>
   );
 }

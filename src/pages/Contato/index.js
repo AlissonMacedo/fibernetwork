@@ -4,18 +4,11 @@ import { Form, Input } from '@rocketseat/unform';
 import { MdEmail, MdLocationOn, MdGroup, MdPhonelink } from 'react-icons/md';
 import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-
 import contato from '../../assets/img/contato.svg';
-
-// import imgContact from '../../assets/img/contact-people.jpg';
-// import { Container } from './styles';
 
 export default function Contato() {
   return (
     <>
-      <Header />
       <section className="section-contato">
         <div className="section-contato__textBox tracking-in-expand">
           <h1>
@@ -161,14 +154,6 @@ export default function Contato() {
           </div>
         </Form>
       </section>
-      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#F26425"
-          fillOpacity="1"
-          d="M0,256L60,245.3C120,235,240,213,360,208C480,203,600,213,720,208C840,203,960,181,1080,186.7C1200,192,1320,224,1380,240L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-        />
-      </svg> */}
-      <Footer />
     </>
   );
 }

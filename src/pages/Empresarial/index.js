@@ -5,8 +5,6 @@ import { FaConnectdevelop } from 'react-icons/fa';
 import { MdWatchLater, MdApps } from 'react-icons/md';
 import { AiOutlineCloudServer, AiOutlineProject } from 'react-icons/ai';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import ListPlanos from '../../components/ListPlanos';
 
 import { Presentation } from './styles';
@@ -150,16 +148,8 @@ export default function Empresarial() {
     setActive(!active);
   }
 
-  function handleMudaButton() {
-    setActive(!active);
-    handleBandaLarga();
-    handleLinkDedicado();
-  }
-
   return (
     <>
-      <Header />
-
       <Presentation>
         <img className="tilt-in-top-1" src={background} alt="Business" />
       </Presentation>
@@ -172,7 +162,7 @@ export default function Empresarial() {
           <span className={!active ? 'active' : 'active fide-left'} />
           <button
             type="button"
-            onClick={handleMudaButton}
+            onClick={handleBandaLarga}
             className={
               active
                 ? 'switch-button-case left'
@@ -184,7 +174,7 @@ export default function Empresarial() {
 
           <button
             type="button"
-            onClick={handleMudaButton}
+            onClick={handleLinkDedicado}
             className={
               active
                 ? 'switch-button-case right active-case'
@@ -216,8 +206,6 @@ export default function Empresarial() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
