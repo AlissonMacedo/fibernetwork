@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/fibernetwork/static/css/main.aa7c6fc0.chunk.css",
-    "main.js": "/fibernetwork/static/js/main.2340fc52.chunk.js",
-    "main.js.map": "/fibernetwork/static/js/main.2340fc52.chunk.js.map",
+    "main.css": "/fibernetwork/static/css/main.a7201f3d.chunk.css",
+    "main.js": "/fibernetwork/static/js/main.21840018.chunk.js",
+    "main.js.map": "/fibernetwork/static/js/main.21840018.chunk.js.map",
     "runtime-main.js": "/fibernetwork/static/js/runtime-main.1bece40a.js",
     "runtime-main.js.map": "/fibernetwork/static/js/runtime-main.1bece40a.js.map",
     "static/css/2.3c1ddb0a.chunk.css": "/fibernetwork/static/css/2.3c1ddb0a.chunk.css",
-    "static/js/2.ef700b09.chunk.js": "/fibernetwork/static/js/2.ef700b09.chunk.js",
-    "static/js/2.ef700b09.chunk.js.map": "/fibernetwork/static/js/2.ef700b09.chunk.js.map",
+    "static/js/2.1e6275be.chunk.js": "/fibernetwork/static/js/2.1e6275be.chunk.js",
+    "static/js/2.1e6275be.chunk.js.map": "/fibernetwork/static/js/2.1e6275be.chunk.js.map",
     "index.html": "/fibernetwork/index.html",
-    "precache-manifest.1e1c8bd92ad2cd79638507d89ebb30cc.js": "/fibernetwork/precache-manifest.1e1c8bd92ad2cd79638507d89ebb30cc.js",
+    "precache-manifest.f09857390baf3b9f3854c1c39257224c.js": "/fibernetwork/precache-manifest.f09857390baf3b9f3854c1c39257224c.js",
     "service-worker.js": "/fibernetwork/service-worker.js",
     "static/css/2.3c1ddb0a.chunk.css.map": "/fibernetwork/static/css/2.3c1ddb0a.chunk.css.map",
-    "static/css/main.aa7c6fc0.chunk.css.map": "/fibernetwork/static/css/main.aa7c6fc0.chunk.css.map",
+    "static/css/main.a7201f3d.chunk.css.map": "/fibernetwork/static/css/main.a7201f3d.chunk.css.map",
     "static/media/banner-1_blur.jpg": "/fibernetwork/static/media/banner-1_blur.f1921014.jpg",
     "static/media/business-vector.png": "/fibernetwork/static/media/business-vector.80ead1e4.png",
     "static/media/contato.svg": "/fibernetwork/static/media/contato.2b6ee6da.svg",
     "static/media/device-tv.png": "/fibernetwork/static/media/device-tv.836dad6c.png",
     "static/media/logo_fiber.png": "/fibernetwork/static/media/logo_fiber.1fc9db9b.png",
+    "static/media/logo_fiber.svg": "/fibernetwork/static/media/logo_fiber.6bfa818e.svg",
     "static/media/natal_2019.png": "/fibernetwork/static/media/natal_2019.201748bc.png",
     "static/media/residencial.png": "/fibernetwork/static/media/residencial.a0c5847a.png",
     "static/media/sua-empresa.jpg": "/fibernetwork/static/media/sua-empresa.8b7d4dea.jpg"
@@ -25,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.1bece40a.js",
     "static/css/2.3c1ddb0a.chunk.css",
-    "static/js/2.ef700b09.chunk.js",
-    "static/css/main.aa7c6fc0.chunk.css",
-    "static/js/main.2340fc52.chunk.js"
+    "static/js/2.1e6275be.chunk.js",
+    "static/css/main.a7201f3d.chunk.css",
+    "static/js/main.21840018.chunk.js"
   ]
 }
