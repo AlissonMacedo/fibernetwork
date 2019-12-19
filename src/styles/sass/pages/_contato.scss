@@ -62,7 +62,7 @@
   }
 
   @include respond(phone) {
-    padding: 5rem;
+    padding: 2rem;
   }
 }
 
@@ -79,6 +79,10 @@
 
   @include respond(tab-port) {
     margin: 5rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 5rem 2rem;
   }
 
   &__icon {
