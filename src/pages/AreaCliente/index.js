@@ -10,9 +10,11 @@ export default function AreaCliente() {
           Acesso Rápido | Teste de Velocidade
         </span>
 
+        <br />
+
         <a
           href="http://sistema.fibernetwork.com.br:40860/central"
-          className="btn btn-white mt-big"
+          className="btn btn-white"
         >
           <span>Acessar Central do Assinante</span>
         </a>

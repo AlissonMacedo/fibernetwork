@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ItemsCarousel from 'react-items-carousel';
 
 import { IoMdCheckmark, IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import { FaConnectdevelop } from 'react-icons/fa';
-import { MdWatchLater, MdApps } from 'react-icons/md';
+import {
+  MdWatchLater,
+  MdApps,
+  MdChevronLeft,
+  MdChevronRight,
+} from 'react-icons/md';
 import { AiOutlineCloudServer } from 'react-icons/ai';
 
 import ListPlanos from '../../components/ListPlanos';
@@ -56,6 +62,21 @@ export default function Residencial() {
       feature4: 'Franquia 1200 GB',
     },
   ];
+
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+
+  const [width, setWidth] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
+  console.log(width);
 
   return (
     <>
@@ -114,13 +135,33 @@ export default function Residencial() {
         </div>
       </section>
 
-      <section className="plan mt-big">
-        <div className="plan__box">
+      {/* <section className="plan mt-big">
+        <div className="plan__box" />
+      </section> */}
+
+      <div style={{ padding: '60px', maxWidth: 1100, margin: '0 auto' }}>
+        <ItemsCarousel
+          infiniteLoop={false}
+          gutter={width <= 900 ? 80 : 12}
+          activePosition="center"
+          chevronWidth={60}
+          disableSwipe={false}
+          alwaysShowChevrons={false}
+          numberOfCards={width <= 900 ? 1 : 3}
+          slidesToScroll={1}
+          outsideChevron
+          showSlither={false}
+          firstAndLastGutter={false}
+          activeItemIndex={activeItemIndex}
+          requestToChangeActive={value => setActiveItemIndex(value)}
+          rightChevron={<MdChevronRight color="#f26425" size={65} />}
+          leftChevron={<MdChevronLeft color="#f26425" size={65} />}
+        >
           {planosRes.map(p => (
             <ListPlanos data={p} key={p.id} />
           ))}
-        </div>
-      </section>
+        </ItemsCarousel>
+      </div>
     </>
   );
 }

@@ -1078,7 +1078,7 @@ button {
     .section-ContactInfo {
       display: flex;
       flex-direction: column;
-      padding: 5rem 10rem; } }
+      padding: 5rem 8rem; } }
   @media (max-width: 37.5em) {
     .section-ContactInfo {
       padding: 2rem; } }

@@ -58,7 +58,7 @@
   @include respond(tab-port) {
     display: flex;
     flex-direction: column;
-    padding: 5rem 10rem;
+    padding: 5rem 8rem;
   }
 
   @include respond(phone) {
