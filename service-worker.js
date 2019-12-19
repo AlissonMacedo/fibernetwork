@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/fibernetwork/precache-manifest.f09857390baf3b9f3854c1c39257224c.js"
+  "/fibernetwork/precache-manifest.d901db5a2f4ec530356e955808e20125.js"
 );
 
 self.addEventListener('message', (event) => {
