@@ -18,7 +18,11 @@ import { Banner } from './styles';
 export default function Home() {
   return (
     <>
-      <Carousel showStatus={false} showThumbs={false} className="mt-big">
+      <Carousel
+        showStatus={false}
+        showThumbs={false}
+        className="mt-big-carousel"
+      >
         <div>
           <img src={slider1} alt="Slider 01" />
         </div>

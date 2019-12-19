@@ -14,8 +14,11 @@
   margin-bottom: 5rem;
 }
 
-.mt-big {
+.mt-big-carousel {
   margin-top: 8rem !important;
+  @include respond(tab-port) {
+    margin-top: 0 !important;
+  }
 }
 
 .mt-bigger {
@@ -23,7 +26,7 @@
 }
 
 .mb-big {
-  margin-bottom: 7rem;
+  margin-top: 8rem !important;
 }
 
 .mt-12 {

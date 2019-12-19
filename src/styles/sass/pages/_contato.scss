@@ -8,6 +8,11 @@
 
   @include respond(tab-port) {
     height: 80%;
+    padding: 10rem;
+  }
+
+  @include respond(phone) {
+    padding: 5rem;
   }
 
   &__textBox {
@@ -49,6 +54,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 10rem;
+  }
+
+  @include respond(phone) {
+    padding: 5rem;
+  }
 }
 
 .card {
@@ -61,6 +76,10 @@
   border-radius: 1rem;
   padding: 5rem;
   box-shadow: 1rem 0.5rem 1.5rem rgba($color-black, 0.2);
+
+  @include respond(tab-port) {
+    margin: 5rem 0;
+  }
 
   &__icon {
     display: flex;
@@ -110,6 +129,10 @@
 .section-formContato {
   width: 50%;
   margin: 0 auto;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
 }
 
 .tracking-in-expand {

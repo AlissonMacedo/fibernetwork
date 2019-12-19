@@ -13,9 +13,18 @@ export const Banner = styled.section`
   align-items: center;
   justify-content: space-evenly;
 
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   p {
     color: #fff;
     font-size: 3.4rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
 
   strong {

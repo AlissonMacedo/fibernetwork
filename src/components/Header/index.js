@@ -5,8 +5,8 @@ import {
   MdList,
   MdHeadsetMic,
   MdDashboard,
-  MdMail,
   MdHome,
+  MdAndroid,
 } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from 'react-icons/fa';
@@ -127,13 +127,13 @@ export default function Header() {
 
             <li className="mobile__item">
               <a
-                href="http://webmail.wiretelecom.com.br/"
+                href="https://play.google.com/store/apps/details?id=com.newavetele.mwisp.fibernetwork"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mobile__item--link"
               >
-                <MdMail className="mobile__btn--icon" />
-                Webmail
+                <MdAndroid className="mobile__btn--icon" />
+                Download App
               </a>
             </li>
           </ul>

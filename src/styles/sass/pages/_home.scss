@@ -78,52 +78,6 @@
   }
 }
 
-  // .banner {
-  //   background-image: linear-gradient(
-  //     to bottom left,
-  //     rgba($color-light, 0.4),
-  //     rgba($color-white, 0.8),
-  //   );
-  //   background-size: cover;
-  //   background-position: center;
-  //   height: 45vh;
-  //   padding: 0 5rem;
-
-  //   display: flex;
-  //   flex-direction: row;
-  //   align-items: center;
-  //   justify-content: space-evenly;
-
-  //   p {
-  //     color: $color-darker;
-  //     font-size: 3.4rem;
-  //   }
-
-  //   strong {
-  //     color: $color-primary;
-  //   }
-
-  //   &__contato {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: flex-start;
-
-  //     span {
-  //       display: flex;
-  //       flex-direction: row;
-  //       align-items: center;
-
-  //     }
-
-  //     h2 {
-  //       color: $color-darker;
-  //       text-align: left;
-  //       font-size: 3rem;
-  //     }
-  //   }
-
-  // }
-
 .paraVoce {
   display: flex;
   flex-direction: row;
@@ -132,17 +86,43 @@
   height: 100%;
   background: #f7f7f7;
 
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__text {
     width: 35%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 5rem;
+    }
 
     h2 {
       color: $color-primary;
       font-size: 6rem;
+
+      @include respond(tab-port) {
+        font-size: 5rem;
+      }
+
+      @include respond(phone) {
+        font-size: 4rem;
+      }
     }
 
     p {
       color: $color-darker;
       font-size: 3rem;
+
+      @include respond(tab-port) {
+        font-size: 2.5rem;
+      }
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
     }
 
     span {
@@ -159,6 +139,14 @@
 
   img {
     height: 50rem;
+
+    @include respond(tab-port) {
+      height: 35rem;
+    }
+
+    @include respond(phone) {
+      height: 27rem;
+    }
   }
 }
 
@@ -175,13 +163,28 @@
   // rgba(248,71,38,0.8) 90.8%
   // );
 
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    height: unset;
+  }
+
   &__text {
     text-align: right;
     margin: 0 2rem;
 
+    @include respond(tab-port) {
+      text-align: center;
+      margin: 10rem 2rem;
+    }
+
     h2 {
       color: $color-primary;
       font-size: 6rem;
+
+      @include respond(tab-port) {
+        font-size: 4rem;
+      }
     }
 
     p {
@@ -196,7 +199,12 @@
 
     img {
       width: 100%;
-    height: 100%;
+      height: 100%;
+
+      @include respond(tab-port) {
+        width: 100%;
+        height: 50%;
+      }
     }
   }
 }

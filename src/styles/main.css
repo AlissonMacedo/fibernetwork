@@ -182,14 +182,17 @@ button {
 .mb-middle {
   margin-bottom: 5rem; }
 
-.mt-big {
+.mt-big-carousel {
   margin-top: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .mt-big-carousel {
+      margin-top: 0 !important; } }
 
 .mt-bigger {
   margin-top: 15rem !important; }
 
 .mb-big {
-  margin-bottom: 7rem; }
+  margin-top: 8rem !important; }
 
 .mt-12 {
   margin-top: -12rem !important; }
@@ -438,10 +441,10 @@ button {
     font-size: 1.5rem;
     color: #9dca83;
     font-weight: bold; }
-  .form__group:not(:last-child) {
+  .form__group {
     margin-bottom: 1.3rem; }
     @media (max-width: 37.5em) {
-      .form__group:not(:last-child) {
+      .form__group {
         width: 100%; } }
   .form .group-width {
     width: 100%; }
@@ -944,14 +947,34 @@ button {
   align-items: center;
   height: 100%;
   background: #f7f7f7; }
+  @media (max-width: 56.25em) {
+    .paraVoce {
+      display: flex;
+      flex-direction: column; } }
   .paraVoce__text {
     width: 35%; }
+    @media (max-width: 56.25em) {
+      .paraVoce__text {
+        width: 100%;
+        padding: 5rem; } }
     .paraVoce__text h2 {
       color: #f26425;
       font-size: 6rem; }
+      @media (max-width: 56.25em) {
+        .paraVoce__text h2 {
+          font-size: 5rem; } }
+      @media (max-width: 37.5em) {
+        .paraVoce__text h2 {
+          font-size: 4rem; } }
     .paraVoce__text p {
       color: #666;
       font-size: 3rem; }
+      @media (max-width: 56.25em) {
+        .paraVoce__text p {
+          font-size: 2.5rem; } }
+      @media (max-width: 37.5em) {
+        .paraVoce__text p {
+          font-size: 2rem; } }
     .paraVoce__text span {
       display: flex;
       flex-direction: row;
@@ -962,6 +985,12 @@ button {
       margin-bottom: 2rem; }
   .paraVoce img {
     height: 50rem; }
+    @media (max-width: 56.25em) {
+      .paraVoce img {
+        height: 35rem; } }
+    @media (max-width: 37.5em) {
+      .paraVoce img {
+        height: 27rem; } }
 
 .paraSua-empresa {
   display: flex;
@@ -970,12 +999,24 @@ button {
   align-items: center;
   height: 100%;
   background: #fff; }
+  @media (max-width: 56.25em) {
+    .paraSua-empresa {
+      display: flex;
+      flex-direction: column;
+      height: unset; } }
   .paraSua-empresa__text {
     text-align: right;
     margin: 0 2rem; }
+    @media (max-width: 56.25em) {
+      .paraSua-empresa__text {
+        text-align: center;
+        margin: 10rem 2rem; } }
     .paraSua-empresa__text h2 {
       color: #f26425;
       font-size: 6rem; }
+      @media (max-width: 56.25em) {
+        .paraSua-empresa__text h2 {
+          font-size: 4rem; } }
     .paraSua-empresa__text p {
       color: #666;
       font-size: 3rem; }
@@ -985,6 +1026,10 @@ button {
     .paraSua-empresa__image img {
       width: 100%;
       height: 100%; }
+      @media (max-width: 56.25em) {
+        .paraSua-empresa__image img {
+          width: 100%;
+          height: 50%; } }
 
 .section-contato {
   display: flex;
@@ -995,7 +1040,11 @@ button {
   padding: 15rem; }
   @media (max-width: 56.25em) {
     .section-contato {
-      height: 80%; } }
+      height: 80%;
+      padding: 10rem; } }
+  @media (max-width: 37.5em) {
+    .section-contato {
+      padding: 5rem; } }
   .section-contato__textBox {
     display: flex;
     flex-direction: column; }
@@ -1025,6 +1074,14 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+  @media (max-width: 56.25em) {
+    .section-ContactInfo {
+      display: flex;
+      flex-direction: column;
+      padding: 5rem 10rem; } }
+  @media (max-width: 37.5em) {
+    .section-ContactInfo {
+      padding: 5rem; } }
 
 .card {
   margin-top: -15rem;
@@ -1036,6 +1093,9 @@ button {
   border-radius: 1rem;
   padding: 5rem;
   box-shadow: 1rem 0.5rem 1.5rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 56.25em) {
+    .card {
+      margin: 5rem 0; } }
   .card__icon {
     display: flex;
     flex-direction: column;
@@ -1071,6 +1131,9 @@ button {
 .section-formContato {
   width: 50%;
   margin: 0 auto; }
+  @media (max-width: 56.25em) {
+    .section-formContato {
+      width: 100%; } }
 
 .tracking-in-expand {
   -webkit-animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -1116,7 +1179,7 @@ button {
   box-shadow: -2rem 1rem 3rem rgba(0, 0, 0, 0.2); }
   @media (max-width: 56.25em) {
     .vantagens-residencial {
-      padding: 5rem;
+      padding: 5rem 3rem;
       margin: 3rem; } }
   .vantagens-residencial__content {
     display: flex;
