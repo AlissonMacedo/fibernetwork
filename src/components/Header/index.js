@@ -58,13 +58,23 @@ export default function Header() {
               <li>|</li>
 
               <li>
-                <FaFacebookSquare />
+                <a
+                  href="https://www.facebook.com/fibernetwork.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookSquare />
+                </a>
               </li>
+
               <li>
-                <FaInstagram />
-              </li>
-              <li>
-                <FaWhatsapp />
+                <a
+                  href="https://www.instagram.com/fiber_network_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram />
+                </a>
               </li>
             </ul>
           </nav>

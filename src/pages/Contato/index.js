@@ -1,12 +1,27 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
-import { MdEmail, MdLocationOn, MdGroup, MdPhonelink } from 'react-icons/md';
+import * as Yup from 'yup';
+
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdMail, MdLocationOn, MdGroup, MdPhoneInTalk } from 'react-icons/md';
 import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 
+import InputTeste from '../../components/Input';
 import contato from '../../assets/img/contato.svg';
 
 export default function Contato() {
+  const schema = Yup.object().shape({
+    nome: Yup.string().required('Informe o seu nome'),
+    email: Yup.string().required('Informe o seu e-mail'),
+    telefone: Yup.string().required('Informe o telefone'),
+    mensagem: Yup.string().required('Digite a sua mensagem'),
+  });
+
+  function handleSubmit(data) {
+    console.log(data);
+  }
+
   return (
     <>
       <section className="section-contato">
@@ -33,11 +48,26 @@ export default function Contato() {
           </div>
           <strong>Suporte Técnico</strong>
 
-          <span>0800 878 8194</span>
+          <span>
+            <MdPhoneInTalk color="#f26425" size={25} />
+            <a href="tel:08008788194">0800 878 8194</a>
+          </span>
 
-          <span>(92) 3199.1000</span>
+          <span>
+            <MdPhoneInTalk color="#f26425" size={25} />
+            <a href="tel:9231991000">92 3199.1000</a>
+          </span>
 
-          <span>(92) 9.9316.3444</span>
+          <span>
+            <IoLogoWhatsapp color="#f26425" size={25} />
+            <a
+              href="https://api.whatsapp.com/send?phone=5592993163444"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (92) 9.9316.3444
+            </a>
+          </span>
         </div>
 
         <div className="card">
@@ -60,7 +90,7 @@ export default function Contato() {
 
         <div className="card">
           <div className="card__icon">
-            <MdPhonelink color="#fff" size={30} />
+            <MdPhoneInTalk color="#fff" size={30} />
           </div>
           <strong>#Siga-nos</strong>
 
@@ -79,14 +109,14 @@ export default function Contato() {
           </span>
 
           <span>
-            <MdEmail color="#f26425" size={25} />
+            <MdMail color="#f26425" size={25} />
             <a href="mailto:sac@fibernetwork.com.br">sac@fibernetwork.com.br</a>
           </span>
         </div>
       </section>
 
       <section className="section-formContato">
-        <Form onSubmit={() => {}} className="form">
+        <Form schema={schema} onSubmit={handleSubmit} className="form">
           <div className="section-contato__text-box mb-small">
             <h2>Dados Pessoais</h2>
           </div>
@@ -98,11 +128,7 @@ export default function Contato() {
               placeholder="Nome Completo"
               id="nome"
               name="nome"
-              required
             />
-            <label htmlFor="nome" className="form__label">
-              Nome Completo
-            </label>
           </div>
 
           <div className="form__group">
@@ -112,25 +138,18 @@ export default function Contato() {
               placeholder="Seu melhor email"
               id="email"
               name="email"
-              required
             />
-            <label htmlFor="email" className="form__label">
-              Email
-            </label>
           </div>
 
           <div className="form__group">
-            <Input
-              placeholder="(xx) x xxxx.xxxx"
+            <InputTeste
               type="text"
               className="form__input"
+              placeholder="Telefone 1"
               id="telefone"
               name="telefone"
-              required
+              mask="(99) 9.9999-9999"
             />
-            <label htmlFor="telefone" className="form__label">
-              Telefone
-            </label>
           </div>
 
           <div className="form__group">
@@ -140,15 +159,11 @@ export default function Contato() {
               placeholder="Digite a sua mensagem..."
               id="mensagem"
               name="mensagem"
-              required
             />
-            <label htmlFor="mensagem" className="form__label">
-              Mensagem
-            </label>
           </div>
 
           <div className="form__group">
-            <button type="button" className="plan__btnBox btn-orange">
+            <button type="submit" className="plan__btnBox btn-orange">
               <span>Enviar sua mensagem</span>
             </button>
           </div>

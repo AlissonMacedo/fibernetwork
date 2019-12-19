@@ -45,6 +45,11 @@
       transition: all 0.1s cubic-bezier(0.42, 0, 0.35, 0.78);
       color: $color-darker;
 
+      > a {
+        display: flex;
+        align-items: center;
+      }
+
       &:hover {
         cursor: pointer;
         color: $color-primary;

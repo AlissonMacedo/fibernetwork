@@ -612,12 +612,12 @@ button {
     @media (max-width: 56.25em) {
       .footer__icons-social h2 {
         font-size: 3rem; } }
-  .footer__icons-social i {
+  .footer__icons-social svg {
     font-size: 3rem;
     margin-right: 1.5rem;
     color: #f26425;
     transition: all 0.5s; }
-    .footer__icons-social i:hover {
+    .footer__icons-social svg:hover {
       color: #fd746c; }
   .footer__copyright {
     font-size: 1.6rem;
@@ -668,6 +668,9 @@ button {
       font-weight: 400;
       transition: all 0.1s cubic-bezier(0.42, 0, 0.35, 0.78);
       color: #666; }
+      .menu nav ul li > a {
+        display: flex;
+        align-items: center; }
       .menu nav ul li:hover {
         cursor: pointer;
         color: #f26425; }
@@ -967,7 +970,8 @@ button {
           font-size: 5rem; } }
       @media (max-width: 37.5em) {
         .paraVoce__text h2 {
-          font-size: 4rem; } }
+          font-size: 4rem;
+          margin-top: 6rem; } }
     .paraVoce__text p {
       color: #666;
       font-size: 3rem; }
@@ -1019,9 +1023,15 @@ button {
       @media (max-width: 56.25em) {
         .paraSua-empresa__text h2 {
           font-size: 4rem; } }
+      @media (max-width: 37.5em) {
+        .paraSua-empresa__text h2 {
+          font-size: 3.5rem; } }
     .paraSua-empresa__text p {
       color: #666;
       font-size: 3rem; }
+      @media (max-width: 37.5em) {
+        .paraSua-empresa__text p {
+          font-size: 2.5rem; } }
   .paraSua-empresa__image {
     width: 100%;
     height: 100%; }

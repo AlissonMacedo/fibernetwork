@@ -1,4 +1,7 @@
 import React from 'react';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdPhoneInTalk, MdMail } from 'react-icons/md';
+import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 
 import logo from '../../assets/img/logo_fiber.png';
 // import { Container } from './styles';
@@ -16,7 +19,7 @@ export default function Footer() {
             <h2>Central do Assinante</h2>
 
             <a
-              href="http://sistema.wiretelecom.com.br/modulos/cda/"
+              href="http://sistema.fibernetwork.com.br:40860/central"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
@@ -27,7 +30,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="http://sistema.wiretelecom.com.br/modulos/cda/"
+              href="http://sistema.fibernetwork.com.br:40860/central"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
@@ -38,7 +41,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="http://sistema.wiretelecom.com.br/modulos/cda/"
+              href="http://sistema.fibernetwork.com.br:40860/central"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
@@ -54,32 +57,32 @@ export default function Footer() {
           <div className="footer__menu">
             <h2>Contato</h2>
 
-            <a href="mailto:sac@wiretelecom.com.br" className="nav-link">
+            <a href="sac@fibernetwork.com.br" className="nav-link">
               <p>
-                <i className="far fa-envelope" /> sac@fibernetwork.com.br
+                <MdMail /> sac@fibernetwork.com.br
+              </p>
+            </a>
+
+            <a href="tel:08008788194" className="nav-link">
+              <p>
+                <MdPhoneInTalk /> 0800 878 8194
+              </p>
+            </a>
+
+            <a href="tel:9231991000" className="nav-link">
+              <p>
+                <MdPhoneInTalk /> 92 3199.1000
               </p>
             </a>
 
             <a
-              href="https://api.whatsapp.com/send?phone=5592991073266"
+              href="https://api.whatsapp.com/send?phone=5592993163444"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
             >
               <p>
-                <i className="fab fa-whatsapp" /> 92 9.9316.3444
-              </p>
-            </a>
-
-            <a href="tel:9233064104" className="nav-link">
-              <p>
-                <i className="fas fa-phone" /> 92 3199.1000
-              </p>
-            </a>
-
-            <a href="tel:08008788271" className="nav-link">
-              <p>
-                <i className="fas fa-phone" /> 0800 878 8194
+                <IoLogoWhatsapp /> 92 9.9316.3444
               </p>
             </a>
           </div>
@@ -90,16 +93,21 @@ export default function Footer() {
             <h2>Siga-nos</h2>
 
             <a
-              href="https://pt-br.facebook.com/wiretelecom/"
+              href="https://www.facebook.com/fibernetwork.com.br/"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
             >
-              <i className="fab fa-facebook" />
+              <FaFacebookSquare />
             </a>
 
-            <a href="!#" className="nav-link">
-              <i className="fab fa-instagram" />
+            <a
+              href="https://www.instagram.com/fiber_network_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+            >
+              <FaInstagram />
             </a>
 
             <a
