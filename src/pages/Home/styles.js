@@ -16,6 +16,7 @@ export const Banner = styled.section`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   p {
@@ -24,6 +25,7 @@ export const Banner = styled.section`
 
     @media (max-width: 768px) {
       font-size: 2rem;
+      padding: 0 5rem;
     }
   }
 
@@ -35,6 +37,13 @@ export const Banner = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+    }
 
     span {
       display: flex;
