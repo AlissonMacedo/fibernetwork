@@ -1,5 +1,13 @@
 import React from 'react';
-import { MdPhonelink, MdBusiness, MdList } from 'react-icons/md';
+import {
+  MdPhonelink,
+  MdBusiness,
+  MdList,
+  MdHeadsetMic,
+  MdDashboard,
+  MdMail,
+  MdHome,
+} from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
@@ -83,50 +91,38 @@ export default function Header() {
 
           <ul className="mobile__list">
             <li className="mobile__item">
-              <Link to="/home" className="mobile__item--link">
-                <i className="mobile__item--icon fas fa-home" />
+              <Link to="/" className="mobile__item--link">
+                <MdHome className="mobile__btn--icon" />
                 Home
               </Link>
             </li>
 
             <li className="mobile__item">
               <Link to="/residencial" className="mobile__item--link">
+                <MdPhonelink className="mobile__btn--icon" />
                 Pra Você
               </Link>
             </li>
 
             <li className="mobile__item">
               <Link to="/empresarial" className="mobile__item--link">
-                <i className="mobile__item--icon fas fa-home" />
+                <MdBusiness className="mobile__btn--icon" />
                 Empresas
               </Link>
             </li>
 
             <li className="mobile__item">
               <Link to="/contato" className="mobile__item--link">
-                <i className="mobile__item--icon fas fa-home" />
+                <MdHeadsetMic className="mobile__btn--icon" />
                 Contato
               </Link>
             </li>
 
             <li className="mobile__item">
-              <a
-                href="http://wiretelecom.com.br/central-assinante"
-                className="mobile__item--link"
-              >
-                <i className="mobile__item--icon fas fa-external-link-alt" />
-                Central do Assinante
-              </a>
-            </li>
-
-            <li className="mobile__item">
-              <a
-                href="https://www.minhaconexao.com.br/?server_id=002992"
-                className="mobile__item--link"
-              >
-                <i className="mobile__item--icon fas fa-tachometer-alt" />
-                Teste de Velocidade
-              </a>
+              <Link to="/area-cliente" className="mobile__item--link">
+                <MdDashboard className="mobile__btn--icon" />
+                Área do Cliente
+              </Link>
             </li>
 
             <li className="mobile__item">
@@ -136,7 +132,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="mobile__item--link"
               >
-                <i className="mobile__item--icon fas fa-envelope-square" />
+                <MdMail className="mobile__btn--icon" />
                 Webmail
               </a>
             </li>

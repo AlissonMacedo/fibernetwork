@@ -713,7 +713,7 @@ button {
 .mobile__btn {
   display: none;
   background-color: #ffffff;
-  font-size: 2rem;
+  font-size: 3rem;
   height: 5rem;
   width: 5rem;
   position: fixed;
@@ -725,8 +725,9 @@ button {
   text-align: center;
   cursor: pointer; }
   .mobile__btn--icon {
-    margin-top: 1.6rem;
     color: #f26425; }
+  .mobile__btn > svg {
+    margin-top: 1rem; }
   @media (max-width: 56.25em) {
     .mobile__btn {
       display: block; } }
@@ -788,7 +789,13 @@ button {
   text-decoration: none;
   cursor: pointer;
   color: #666;
-  font-size: 1.5rem; }
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; }
+  .mobile__item--link > svg {
+    margin-right: 1rem; }
 
 @media (max-width: 56.25em) {
   .mobile__checkbox:checked + .mobile__menu {
@@ -809,18 +816,34 @@ button {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #f26425, #ed8f03);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  @media (max-width: 56.25em) {
+    .intro-areaCliente {
+      height: 80%;
+      margin-top: 0; } }
+  @media (max-width: 37.5em) {
+    .intro-areaCliente {
+      padding: 0 2rem; } }
   .intro-areaCliente p {
     color: #fff;
     font-size: 4rem; }
+    @media (max-width: 37.5em) {
+      .intro-areaCliente p {
+        font-size: 3rem; } }
   .intro-areaCliente__description {
     display: block;
     color: #fff;
     font-size: 3rem;
     font-weight: 300; }
+    @media (max-width: 37.5em) {
+      .intro-areaCliente__description {
+        font-size: 2rem; } }
 
 .area-cliente {
   background: #fcfcfc;
   padding: 10rem; }
+  @media (max-width: 37.5em) {
+    .area-cliente {
+      padding: 3rem; } }
   .area-cliente p {
     text-align: center;
     font-size: 3rem;
@@ -832,6 +855,10 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center; }
+  @media (max-width: 56.25em) {
+    .teste-velocidade {
+      display: flex;
+      flex-direction: column; } }
   .teste-velocidade__card {
     display: flex;
     flex-direction: row;
@@ -844,6 +871,9 @@ button {
     transition: all 0.5s;
     margin-bottom: 2rem;
     margin-right: 1rem; }
+    @media (max-width: 56.25em) {
+      .teste-velocidade__card {
+        width: 100%; } }
     .teste-velocidade__card:hover {
       box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.1); }
     .teste-velocidade__card h2 {

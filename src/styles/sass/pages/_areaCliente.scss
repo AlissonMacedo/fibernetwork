@@ -20,22 +20,43 @@
     #ed8f03
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+  @include respond(tab-port) {
+    height: 80%;
+    margin-top: 0;
+  }
+
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
+
   p {
     color: #fff;
     font-size: 4rem;
 
+    @include respond(phone) {
+      font-size: 3rem;
+    }
   }
+
   &__description {
     display: block;
     color: #fff;
     font-size: 3rem;
     font-weight: 300;
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
   }
 }
 
 .area-cliente {
   background: #fcfcfc;
   padding: 10rem;
+
+  @include respond(phone) {
+    padding: 3rem;
+  }
 
   p {
     text-align: center;
@@ -51,6 +72,11 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__card {
     display: flex;
     flex-direction: row;
@@ -65,7 +91,11 @@
     transition: all 0.5s;
 
     margin-bottom: 2rem;
-      margin-right: 1rem;
+    margin-right: 1rem;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
     &:hover {
       box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
