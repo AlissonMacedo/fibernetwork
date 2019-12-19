@@ -8,9 +8,13 @@
   transition: all 0.5s;
   overflow: hidden;
 
+  @include respond(phone) {
+    width: 25rem;
+  }
+
   &__white {
     background: $color-primary;
-    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.2);
+    // box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.2);
   }
 
   &__text {

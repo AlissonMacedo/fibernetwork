@@ -1,42 +1,33 @@
-function verificarCPF(strCpf) {
-  if (!/[0-9]{11}/.test(strCpf)) return false;
-  if (strCpf === '00000000000') return false;
-
-  let soma = 0;
-
-  for (var i = 1; i <= 9; i++) {
-    soma += parseInt(strCpf.substring(i - 1, i)) * (11 - i);
-  }
-
-  let resto = soma % 11;
-
-  if (resto === 10 || resto === 11 || resto < 2) {
-    resto = 0;
-  } else {
-    resto = 11 - resto;
-  }
-
-  if (resto !== parseInt(strCpf.substring(9, 10))) {
+function verificarCPF(cpf) {
+  cpf = cpf.replace(/[^\d]+/g, '');
+  if (cpf == '') return false;
+  // Elimina CPFs invalidos conhecidos
+  if (
+    cpf.length != 11 ||
+    cpf == '00000000000' ||
+    cpf == '11111111111' ||
+    cpf == '22222222222' ||
+    cpf == '33333333333' ||
+    cpf == '44444444444' ||
+    cpf == '55555555555' ||
+    cpf == '66666666666' ||
+    cpf == '77777777777' ||
+    cpf == '88888888888' ||
+    cpf == '99999999999'
+  )
     return false;
-  }
-
-  soma = 0;
-
-  for (var i = 1; i <= 10; i++) {
-    soma += parseInt(strCpf.substring(i - 1, i)) * (12 - i);
-  }
-  resto = soma % 11;
-
-  if (resto === 10 || resto === 11 || resto < 2) {
-    resto = 0;
-  } else {
-    resto = 11 - resto;
-  }
-
-  if (resto !== parseInt(strCpf.substring(10, 11))) {
-    return false;
-  }
-
+  // Valida 1o digito
+  let add = 0;
+  for (var i = 0; i < 9; i++) add += parseInt(cpf.charAt(i)) * (10 - i);
+  var rev = 11 - (add % 11);
+  if (rev == 10 || rev == 11) rev = 0;
+  if (rev != parseInt(cpf.charAt(9))) return false;
+  // Valida 2o digito
+  let add2 = 0;
+  for (var i = 0; i < 10; i++) add2 += parseInt(cpf.charAt(i)) * (11 - i);
+  var rev = 11 - (add2 % 11);
+  if (rev == 10 || rev == 11) rev = 0;
+  if (rev != parseInt(cpf.charAt(10))) return false;
   return true;
 }
 

@@ -13,7 +13,7 @@ import { AiOutlineCloudServer } from 'react-icons/ai';
 
 import ListPlanos from '../../components/ListPlanos';
 
-import { Presentation } from './styles';
+import { Presentation, Container } from './styles';
 
 export default function Residencial() {
   const planosRes = [
@@ -65,7 +65,7 @@ export default function Residencial() {
 
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
-  const [width, setWidth] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -75,8 +75,6 @@ export default function Residencial() {
       window.removeEventListener('resize', handleResize);
     };
   });
-
-  console.log(width);
 
   return (
     <>
@@ -139,7 +137,7 @@ export default function Residencial() {
         <div className="plan__box" />
       </section> */}
 
-      <div style={{ padding: '60px', maxWidth: 1100, margin: '0 auto' }}>
+      <Container>
         <ItemsCarousel
           infiniteLoop={false}
           gutter={width <= 900 ? 80 : 12}
@@ -161,7 +159,7 @@ export default function Residencial() {
             <ListPlanos data={p} key={p.id} />
           ))}
         </ItemsCarousel>
-      </div>
+      </Container>
     </>
   );
 }

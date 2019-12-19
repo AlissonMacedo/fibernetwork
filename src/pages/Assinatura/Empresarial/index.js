@@ -4,22 +4,26 @@ import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+import InputTeste from '../../../components/Input';
 import validarCNPJ from '../../../utils/ValidaCnpj';
 
 export default function Fisica() {
   const schema = Yup.object().shape({
-    nome: Yup.string().required('O nome é obrigatório'),
+    razaoSocial: Yup.string().required('Informe a razão social'),
+    nomeFantasia: Yup.string().required('O nome fantasia é obrigatório'),
+    nomeRepresentante: Yup.string().required(
+      'O nome do representante é obrigatório'
+    ),
     email: Yup.string()
       .email('Insira um e-mail válido')
       .required('O e-mail é obrigatório'),
     emailOpcional: Yup.string().email('Insira um e-mail válido'),
     telefone: Yup.string().required('O telefone principal é obrigatório'),
     telefoneOpcional: Yup.string(),
-    dataNascimento: Yup.string().required('Informe a sua data de nascimento'),
-    estadoCivil: Yup.string().required('Informe seu estado civil'),
-    cnpj: Yup.string()
-      .length(14, 'O CNPJ deverá conter somente 14 caracteres')
-      .required('O CPF é obrigatório'),
+    dataFundacao: Yup.string().required('Informe a sua data de fundação'),
+    cnpj: Yup.string().required('O CNPJ é obrigatório'),
+    inscEstadual: Yup.string().required('Informe sua inscrição estadual'),
+    inscMunicipal: Yup.string().required('Informe sua inscrição municipal'),
     planoResidencial: Yup.string().required(),
     taxa: Yup.string().required('Selecione a sua forma de pagamento'),
     dataVencimento: Yup.string().required('Seleciona o dia do vencimento'),
@@ -35,17 +39,17 @@ export default function Fisica() {
   });
 
   const options = [
-    { id: 'google', title: 'Google' },
-    { id: 'yt', title: 'Youtube' },
-    { id: 'face', title: 'Facebook' },
-    { id: 'insta', title: 'Instagram' },
-    { id: 'site', title: 'Site' },
-    { id: 'panfleto', title: 'Panfleto' },
-    { id: 'indicacao', title: 'Indicação' },
-    { id: 'outdoor', title: 'Outdoor' },
-    { id: 'carro', title: 'Carro de som' },
-    { id: 'tenda', title: 'Tenda' },
-    { id: 'loja', title: 'Loja' },
+    { id: 'Google', title: 'Google' },
+    { id: 'Youtube', title: 'Youtube' },
+    { id: 'Facebook', title: 'Facebook' },
+    { id: 'Instagram', title: 'Instagram' },
+    { id: 'Site', title: 'Site' },
+    { id: 'Panfleto', title: 'Panfleto' },
+    { id: 'Indicação', title: 'Indicação' },
+    { id: 'Outdoor', title: 'Outdoor' },
+    { id: 'Carro de som', title: 'Carro de som' },
+    { id: 'Tenda', title: 'Tenda' },
+    { id: 'Loja', title: 'Loja' },
   ];
 
   const dataVencimento = [
@@ -64,10 +68,18 @@ export default function Fisica() {
   ];
 
   const plano = [
-    { id: 'plano50', title: 'Plano Residencial - 50 MB' },
-    { id: 'plano100', title: 'Plano Residencial - 100 MB' },
-    { id: 'plano200', title: 'Plano Residencial - 200 MB' },
-    { id: 'plano300', title: 'Plano Residencial - 300 MB' },
+    {
+      id: 'Banda Larga Empresarial - 20 MB',
+      title: 'Banda Larga Empresarial - 20 MB',
+    },
+    {
+      id: 'Banda Larga Empresarial - 50 MB',
+      title: 'Banda Larga Empresarial - 50 MB',
+    },
+    {
+      id: 'Banda Larga Empresarial - 100 MB',
+      title: 'Banda Larga Empresarial - 100 MB',
+    },
   ];
 
   const [checkCnpj, setCheckCnpj] = useState('');
@@ -115,17 +127,29 @@ export default function Fisica() {
             <Input
               type="text"
               className="form__input"
-              placeholder="Nome Completo"
-              id="nome"
-              name="nome"
+              placeholder="Razão Social"
+              id="razaoSocial"
+              name="razaoSocial"
             />
           </div>
 
           <div className="form__group group-width">
-            <select type="text" className="form__input" id="sexo" name="sexo">
-              <option>M</option>
-              <option>F</option>
-            </select>
+            <Input
+              type="text"
+              className="form__input"
+              placeholder="Nome Fantasia"
+              id="nomeFantasia"
+              name="nomeFantasia"
+            />
+          </div>
+          <div className="form__group group-width">
+            <Input
+              type="text"
+              className="form__input"
+              placeholder="Nome do Representante"
+              id="nomeRepresentante"
+              name="nomeRepresentante"
+            />
           </div>
 
           <div className="form__group group-width">
@@ -147,36 +171,40 @@ export default function Fisica() {
               name="emailOpcional"
             />
           </div>
-
-          <div className="form__group group-width">
-            <Input
-              type="text"
-              className="form__input"
-              placeholder="Telefone principal"
-              id="telefone"
-              name="telefone"
-            />
-          </div>
         </div>
 
         <div className="form-box">
           <div className="form__group group-width">
-            <Input
+            <InputTeste
               type="text"
               className="form__input"
-              placeholder="Telefone (Opcional)"
-              id="telefoneOpcional"
-              name="telefoneOpcional"
+              placeholder="Seu Telefone principal"
+              id="telefone"
+              name="telefone"
+              mask="(99) 9.9999-9999"
             />
           </div>
 
           <div className="form__group group-width">
-            <Input
+            <InputTeste
               type="text"
               className="form__input"
+              placeholder="Seu Telefone (Opcional)"
+              id="telefoneOpcional"
+              name="telefoneOpcional"
+              mask="(99) 9.9999-9999"
+            />
+          </div>
+
+          <div className="form__group group-width">
+            <InputTeste
+              type="text"
+              className="form__input"
+              placeholder="CNPJ"
               id="cnpj"
               name="cnpj"
               onChange={handleCheckCnpj}
+              mask="99.999.999/9999-99"
             />
             <br />
             <span>{checkCnpj}</span>
@@ -186,8 +214,8 @@ export default function Fisica() {
             <Input
               type="date"
               className="form__input"
-              id="dataNascimento"
-              name="dataNascimento"
+              id="dataFundacao"
+              name="dataFundacao"
             />
           </div>
 
@@ -220,7 +248,7 @@ export default function Fisica() {
           <div className="form__group group-width">
             <Select
               className="form__input"
-              placeholder="Seu plano residencial"
+              placeholder="Seu plano Empresarial"
               id="planoResidencial"
               name="planoResidencial"
               options={plano}

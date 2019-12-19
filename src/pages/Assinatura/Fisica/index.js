@@ -4,6 +4,7 @@ import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+import InputTeste from '../../../components/Input';
 import Valida from '../../../utils/validaCpf';
 
 export default function Fisica() {
@@ -19,10 +20,10 @@ export default function Fisica() {
     dataNascimento: Yup.string().required('Informe a sua data de nascimento'),
     estadoCivil: Yup.string().required('Informe seu estado civil'),
     cpf: Yup.string()
-      .length(11, 'O CPF deverá conter somente 11 caracteres')
+      .length(14, 'O CPF deverá conter somente 11 caracteres')
       .required('O CPF é obrigatório'),
     rg: Yup.string()
-      .min(8)
+      .max(14)
       .required('O RG é obrigatório'),
     orgExpeditor: Yup.string()
       .uppercase()
@@ -71,10 +72,22 @@ export default function Fisica() {
   ];
 
   const plano = [
-    { id: 'plano50', title: 'Plano Residencial - 50 MB' },
-    { id: 'plano100', title: 'Plano Residencial - 100 MB' },
-    { id: 'plano200', title: 'Plano Residencial - 200 MB' },
-    { id: 'plano300', title: 'Plano Residencial - 300 MB' },
+    {
+      id: 'Banda Larga Residencial - 50 MB',
+      title: 'Banda Larga Residencial - 50 MB',
+    },
+    {
+      id: 'Banda Larga Residencial - 100 MB',
+      title: 'Banda Larga Residencial - 100 MB',
+    },
+    {
+      id: 'Banda Larga Residencial - 200 MB',
+      title: 'Banda Larga Residencial - 200 MB',
+    },
+    {
+      id: 'Banda Larga Residencial - 300 MB',
+      title: 'Banda Larga Residencial - 300 MB',
+    },
   ];
 
   const sexo = [
@@ -140,7 +153,7 @@ export default function Fisica() {
           <Input
             type="email"
             className="form__input"
-            placeholder="Seu melhor email"
+            placeholder="Email 1"
             id="email"
             name="email"
           />
@@ -150,7 +163,7 @@ export default function Fisica() {
           <Input
             type="email"
             className="form__input"
-            placeholder="Seu email opcional"
+            placeholder="Email 2 (Opcional)"
             id="emailOpcional"
             name="emailOpcional"
           />
@@ -159,31 +172,35 @@ export default function Fisica() {
 
       <div className="form-box">
         <div className="form__group group-width">
-          <Input
+          <InputTeste
             type="text"
             className="form__input"
-            placeholder="Seu Telefone principal"
+            placeholder="Telefone 1"
             id="telefone"
             name="telefone"
+            mask="(99) 9.9999-9999"
           />
         </div>
 
         <div className="form__group group-width">
-          <Input
+          <InputTeste
             type="text"
             className="form__input"
-            placeholder="Seu Telefone (Opcional)"
+            placeholder="Telefone 2 (Opcional)"
             id="telefoneOpcional"
             name="telefoneOpcional"
+            mask="(99) 9.9999-9999"
           />
         </div>
 
         <div className="form__group group-width">
-          <Input
-            type="date"
+          <InputTeste
+            type="text"
             className="form__input"
+            placeholder="Data de Nascimento"
             id="dataNascimento"
             name="dataNascimento"
+            mask="99/99/9999"
           />
         </div>
 
@@ -200,12 +217,14 @@ export default function Fisica() {
 
       <div className="form-box">
         <div className="form__group group-width">
-          <Input
+          <InputTeste
             type="text"
             className="form__input"
+            placeholder="CPF"
             id="cpf"
             name="cpf"
             onChange={handleCheckCpf}
+            mask="999.999.999-99"
           />
           <br />
           <span>{checkCpf}</span>
@@ -218,6 +237,7 @@ export default function Fisica() {
             placeholder="Rg"
             id="rg"
             name="rg"
+            maxLength="14"
           />
         </div>
 
@@ -274,13 +294,14 @@ export default function Fisica() {
 
       <div className="form-box">
         <div className="form__group group-width">
-          <Input
-            placeholder="xxxxx-xxx"
-            type="text"
+          <InputTeste
+            placeholder="CEP"
+            type="number"
             className="form__input"
             id="cep"
             name="cep"
             onChange={e => setCep(e.target.value)}
+            maxLength="8"
           />
         </div>
 

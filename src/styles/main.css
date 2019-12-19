@@ -394,9 +394,11 @@ button {
   width: 28rem;
   transition: all 0.5s;
   overflow: hidden; }
+  @media (max-width: 37.5em) {
+    .card-plan-2 {
+      width: 25rem; } }
   .card-plan-2__white {
-    background: #f26425;
-    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.2); }
+    background: #f26425; }
   .card-plan-2__text {
     margin: 0 2rem; }
     .card-plan-2__text h1 {

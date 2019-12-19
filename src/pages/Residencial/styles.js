@@ -12,3 +12,9 @@ export const Presentation = styled.section`
     height: 80%;
   }
 `;
+
+export const Container = styled.div`
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 6rem;
+`;

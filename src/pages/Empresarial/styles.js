@@ -34,3 +34,9 @@ export const Presentation = styled.section`
     }
   }
 `;
+
+export const Container = styled.div`
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 6rem;
+`;

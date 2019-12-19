@@ -4,6 +4,8 @@ import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+import InputTeste from '../../../components/Input';
+
 export default function Fisica() {
   const schema = Yup.object().shape({
     nome: Yup.string().required('O nome é obrigatório'),
@@ -123,7 +125,7 @@ export default function Fisica() {
           <Input
             type="email"
             className="form__input"
-            placeholder="Seu melhor email"
+            placeholder="Email 1"
             id="email"
             name="email"
           />
@@ -133,7 +135,7 @@ export default function Fisica() {
           <Input
             type="email"
             className="form__input"
-            placeholder="Seu email opcional"
+            placeholder="Email 2 (Opcional)"
             id="emailOpcional"
             name="emailOpcional"
           />
@@ -142,31 +144,35 @@ export default function Fisica() {
 
       <div className="form-box">
         <div className="form__group group-width">
-          <Input
+          <InputTeste
             type="text"
             className="form__input"
-            placeholder="Seu Telefone principal"
+            placeholder="Telefone 1"
             id="telefone"
             name="telefone"
+            mask="(99) 9.9999-9999"
           />
         </div>
 
         <div className="form__group group-width">
-          <Input
+          <InputTeste
             type="text"
             className="form__input"
-            placeholder="Seu Telefone (Opcional)"
+            placeholder="Telefone 2 (Opcional)"
             id="telefoneOpcional"
             name="telefoneOpcional"
+            mask="(99) 9.9999-9999"
           />
         </div>
 
         <div className="form__group group-width">
-          <Input
-            type="date"
+          <InputTeste
+            type="text"
             className="form__input"
+            placeholder="Data de Nascimento"
             id="dataNascimento"
             name="dataNascimento"
+            mask="99/99/9999"
           />
         </div>
 
@@ -177,6 +183,7 @@ export default function Fisica() {
             placeholder="Passaporte"
             id="passaporte"
             name="passaporte"
+            maxLength="14"
           />
         </div>
       </div>
