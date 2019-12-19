@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fibernetwork/static/css/main.cc0cb0a3.chunk.css",
-    "main.js": "/fibernetwork/static/js/main.705c83ad.chunk.js",
-    "main.js.map": "/fibernetwork/static/js/main.705c83ad.chunk.js.map",
+    "main.js": "/fibernetwork/static/js/main.ace9d9b6.chunk.js",
+    "main.js.map": "/fibernetwork/static/js/main.ace9d9b6.chunk.js.map",
     "runtime-main.js": "/fibernetwork/static/js/runtime-main.1bece40a.js",
     "runtime-main.js.map": "/fibernetwork/static/js/runtime-main.1bece40a.js.map",
     "static/css/2.3c1ddb0a.chunk.css": "/fibernetwork/static/css/2.3c1ddb0a.chunk.css",
-    "static/js/2.b543d8a6.chunk.js": "/fibernetwork/static/js/2.b543d8a6.chunk.js",
-    "static/js/2.b543d8a6.chunk.js.map": "/fibernetwork/static/js/2.b543d8a6.chunk.js.map",
+    "static/js/2.8c020488.chunk.js": "/fibernetwork/static/js/2.8c020488.chunk.js",
+    "static/js/2.8c020488.chunk.js.map": "/fibernetwork/static/js/2.8c020488.chunk.js.map",
     "index.html": "/fibernetwork/index.html",
-    "precache-manifest.ecaee0d68ef667f93cce8da83d9b737e.js": "/fibernetwork/precache-manifest.ecaee0d68ef667f93cce8da83d9b737e.js",
+    "precache-manifest.6030887fcedc8968037d81ef028a36a4.js": "/fibernetwork/precache-manifest.6030887fcedc8968037d81ef028a36a4.js",
     "service-worker.js": "/fibernetwork/service-worker.js",
     "static/css/2.3c1ddb0a.chunk.css.map": "/fibernetwork/static/css/2.3c1ddb0a.chunk.css.map",
     "static/css/main.cc0cb0a3.chunk.css.map": "/fibernetwork/static/css/main.cc0cb0a3.chunk.css.map",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.1bece40a.js",
     "static/css/2.3c1ddb0a.chunk.css",
-    "static/js/2.b543d8a6.chunk.js",
+    "static/js/2.8c020488.chunk.js",
     "static/css/main.cc0cb0a3.chunk.css",
-    "static/js/main.705c83ad.chunk.js"
+    "static/js/main.ace9d9b6.chunk.js"
   ]
 }
