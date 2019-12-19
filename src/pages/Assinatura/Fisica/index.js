@@ -173,7 +173,7 @@ export default function Fisica() {
       <div className="form-box">
         <div className="form__group group-width">
           <InputTeste
-            type="text"
+            type="number"
             className="form__input"
             placeholder="Telefone 1"
             id="telefone"
@@ -184,7 +184,7 @@ export default function Fisica() {
 
         <div className="form__group group-width">
           <InputTeste
-            type="text"
+            type="number"
             className="form__input"
             placeholder="Telefone 2 (Opcional)"
             id="telefoneOpcional"
@@ -195,7 +195,7 @@ export default function Fisica() {
 
         <div className="form__group group-width">
           <InputTeste
-            type="text"
+            type="number"
             className="form__input"
             placeholder="Data de Nascimento"
             id="dataNascimento"
@@ -218,7 +218,7 @@ export default function Fisica() {
       <div className="form-box">
         <div className="form__group group-width">
           <InputTeste
-            type="text"
+            type="number"
             className="form__input"
             placeholder="CPF"
             id="cpf"
@@ -232,7 +232,7 @@ export default function Fisica() {
 
         <div className="form__group group-width">
           <Input
-            type="text"
+            type="number"
             className="form__input"
             placeholder="Rg"
             id="rg"
