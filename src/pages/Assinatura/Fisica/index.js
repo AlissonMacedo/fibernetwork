@@ -19,6 +19,7 @@ export default function Fisica() {
     telefoneOpcional: Yup.string(),
     dataNascimento: Yup.string().required('Informe a sua data de nascimento'),
     estadoCivil: Yup.string().required('Informe seu estado civil'),
+    nomeConjuge: Yup.string(),
     cpf: Yup.string()
       .length(14, 'O CPF deverá conter somente 11 caracteres')
       .required('O CPF é obrigatório'),
@@ -66,9 +67,16 @@ export default function Fisica() {
   ];
 
   const taxa = [
-    { id: 'credito', title: 'Cartão de Crédito à vista' },
-    { id: 'debito', title: 'Cartão de Débito' },
-    { id: 'dinheiro', title: 'Dinheiro' },
+    { id: 'Cartão de Crédito à vista', title: 'Cartão de Crédito à vista' },
+    { id: 'Cartão de Débito', title: 'Cartão de Débito' },
+    { id: 'Dinheiro', title: 'Dinheiro' },
+  ];
+
+  const estCivil = [
+    { id: 'Casado(a)', title: 'Casado(a)' },
+    { id: 'Solteiro(a)', title: 'Solteiro(a)' },
+    { id: 'Divorciado(a)', title: 'Divorciado(a)' },
+    { id: 'Viúvo(a)', title: 'Viúvo(a)' },
   ];
 
   const plano = [
@@ -99,6 +107,8 @@ export default function Fisica() {
   const [cep, setCep] = useState('');
 
   const [dataCep, setDataCep] = useState({});
+
+  const [estadoCivil, setEstadoCivil] = useState('');
 
   useEffect(() => {
     async function loadCep() {
@@ -173,7 +183,7 @@ export default function Fisica() {
       <div className="form-box">
         <div className="form__group group-width">
           <InputTeste
-            type="number"
+            type="text"
             className="form__input"
             placeholder="Telefone 1"
             id="telefone"
@@ -184,7 +194,7 @@ export default function Fisica() {
 
         <div className="form__group group-width">
           <InputTeste
-            type="number"
+            type="text"
             className="form__input"
             placeholder="Telefone 2 (Opcional)"
             id="telefoneOpcional"
@@ -195,7 +205,7 @@ export default function Fisica() {
 
         <div className="form__group group-width">
           <InputTeste
-            type="number"
+            type="text"
             className="form__input"
             placeholder="Data de Nascimento"
             id="dataNascimento"
@@ -205,20 +215,32 @@ export default function Fisica() {
         </div>
 
         <div className="form__group group-width">
-          <Input
-            type="text"
+          <Select
             className="form__input"
             placeholder="Estado Civil"
             id="estadoCivil"
             name="estadoCivil"
+            options={estCivil}
+            onChange={e => setEstadoCivil(e.target.value)}
           />
         </div>
+
+        {estadoCivil === 'Casado(a)' ? (
+          <div className="form__group group-width">
+            <Input
+              className="form__input"
+              placeholder="Nome Cônjuge"
+              id="nomeConjuge"
+              name="nomeConjuge"
+            />
+          </div>
+        ) : null}
       </div>
 
       <div className="form-box">
         <div className="form__group group-width">
           <InputTeste
-            type="number"
+            type="text"
             className="form__input"
             placeholder="CPF"
             id="cpf"
@@ -355,10 +377,10 @@ export default function Fisica() {
           <Input
             type="text"
             className="form__input"
-            placeholder="Estado"
-            id="estado"
-            name="estado"
-            value={dataCep.uf || ''}
+            placeholder="Cidade"
+            id="cidade"
+            name="cidade"
+            value={dataCep.localidade || ''}
             onChange={() => {}}
           />
         </div>
@@ -367,10 +389,10 @@ export default function Fisica() {
           <Input
             type="text"
             className="form__input"
-            placeholder="Cidade"
-            id="cidade"
-            name="cidade"
-            value={dataCep.localidade || ''}
+            placeholder="Estado"
+            id="estado"
+            name="estado"
+            value={dataCep.uf || ''}
             onChange={() => {}}
           />
         </div>

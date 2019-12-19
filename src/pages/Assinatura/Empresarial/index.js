@@ -80,6 +80,10 @@ export default function Fisica() {
       id: 'Banda Larga Empresarial - 100 MB',
       title: 'Banda Larga Empresarial - 100 MB',
     },
+    {
+      id: 'Link Dedicado',
+      title: 'Link Dedicado',
+    },
   ];
 
   const [checkCnpj, setCheckCnpj] = useState('');
