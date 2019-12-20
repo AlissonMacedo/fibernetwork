@@ -24,7 +24,7 @@ export default function Residencial() {
       download: 50,
       upload: 20,
       feature1: 'Garantia de 40%',
-      feature2: 'SLA: 2 dias úteis',
+      feature2: 'SLA 48 horas',
       feature3: 'IP: NAT / Público Dinâmico',
       feature4: 'Franquia 800 GB',
     },
@@ -35,7 +35,7 @@ export default function Residencial() {
       download: 100,
       upload: 40,
       feature1: 'Garantia de 40%',
-      feature2: 'SLA: 2 dias úteis',
+      feature2: 'SLA 48 horas',
       feature3: 'IP: NAT / Público Dinâmico',
       feature4: 'Franquia 900 GB',
     },
@@ -46,7 +46,7 @@ export default function Residencial() {
       download: 200,
       upload: 80,
       feature1: 'Garantia de 40%',
-      feature2: 'SLA: 2 dias úteis',
+      feature2: 'SLA 48 horas',
       feature3: 'IP: NAT / Público Dinâmico',
       feature4: 'Franquia 1000 GB',
     },
@@ -57,7 +57,7 @@ export default function Residencial() {
       download: 300,
       upload: 120,
       feature1: 'Garantia de 40%',
-      feature2: 'SLA: 2 dias úteis',
+      feature2: 'SLA 48 horas',
       feature3: 'IP: NAT / Público Dinâmico',
       feature4: 'Franquia 1200 GB',
     },
@@ -79,6 +79,11 @@ export default function Residencial() {
   return (
     <>
       <Presentation />
+
+      <div className="nossos-planos mb-middle tracking-in-expand">
+        <h1>Nossos Planos</h1>
+        <h2>Empresariais</h2>
+      </div>
 
       <section className="vantagens-residencial swing-in-top-fwd mt-12">
         <h1>Vantagens</h1>
@@ -102,10 +107,7 @@ export default function Residencial() {
 
           <div className="vantagens-residencial__card">
             <MdWatchLater color="#f70" size={60} />
-            <p>
-              Acordo de Nível de Serviço <br />
-              de 2 dia úteis
-            </p>
+            <p>Acordo de Nível de Serviço de 48 horas</p>
           </div>
         </div>
 

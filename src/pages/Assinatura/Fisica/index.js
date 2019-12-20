@@ -26,9 +26,9 @@ export default function Fisica() {
     rg: Yup.string()
       .max(14)
       .required('O RG é obrigatório'),
-    orgExpeditor: Yup.string()
+    orgExpedidor: Yup.string()
       .uppercase()
-      .required('Informe qual o orgão expeditor'),
+      .required('Informe qual o orgão expedidor'),
     planoResidencial: Yup.string().required(),
     taxa: Yup.string().required('Selecione a sua forma de pagamento'),
     dataVencimento: Yup.string().required('Seleciona o dia do vencimento'),
@@ -266,10 +266,10 @@ export default function Fisica() {
         <div className="form__group group-width">
           <Input
             type="text"
-            className="form__input"
-            placeholder="Orgão Expeditor"
-            id="orgExpeditor"
-            name="orgExpeditor"
+            className="form__input text-uppercase"
+            placeholder="Orgão Expedidor"
+            id="orgExpedidor"
+            name="orgExpedidor"
           />
         </div>
       </div>

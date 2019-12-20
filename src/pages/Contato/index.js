@@ -4,7 +4,13 @@ import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import { IoLogoWhatsapp } from 'react-icons/io';
-import { MdMail, MdLocationOn, MdGroup, MdPhoneInTalk } from 'react-icons/md';
+import {
+  MdMail,
+  MdLocationOn,
+  MdGroup,
+  MdPhoneInTalk,
+  MdPhonelink,
+} from 'react-icons/md';
 import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 
 import InputTeste from '../../components/Input';
@@ -41,12 +47,12 @@ export default function Contato() {
         </div>
       </section>
 
-      <section className="section-ContactInfo">
+      <section className="section-ContactInfo mt-small">
         <div className="card">
           <div className="card__icon">
             <MdGroup color="#fff" size={30} />
           </div>
-          <strong>Suporte Técnico</strong>
+          <strong>Atendimento</strong>
 
           <span>
             <MdPhoneInTalk color="#f26425" size={25} />
@@ -68,6 +74,11 @@ export default function Contato() {
               (92) 9.9316.3444
             </a>
           </span>
+
+          <span>
+            <MdMail color="#f26425" size={25} />
+            <a href="mailto:sac@fibernetwork.com.br">sac@fibernetwork.com.br</a>
+          </span>
         </div>
 
         <div className="card">
@@ -77,20 +88,24 @@ export default function Contato() {
           <strong>Localização</strong>
 
           <span>
-            <MdLocationOn color="#f26425" size={25} /> Av. Margarita, 2660, Loja
-            04 - Centro <br /> Comercial Alaidistania
+            <MdLocationOn color="#f26425" size={25} /> Av. Margarita, 2660 -
+            Nova Cidade
+            <br /> 69097-305, Manaus/Am
           </span>
 
-          <span>
-            <MdLocationOn color="#f26425" size={25} /> Nova Cidade - 69097-305{' '}
-            <br />
-            Manaus - Amazonas - Brasil
-          </span>
+          <a
+            href="https://goo.gl/maps/uDWXDNCZ8nfuQTUj6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-orange mt-middle"
+          >
+            <MdLocationOn color="#fff" /> Ver no mapa
+          </a>
         </div>
 
         <div className="card">
           <div className="card__icon">
-            <MdPhoneInTalk color="#fff" size={30} />
+            <MdPhonelink color="#fff" size={30} />
           </div>
           <strong>#Siga-nos</strong>
 
@@ -107,11 +122,10 @@ export default function Contato() {
               /fiber_network_
             </a>
           </span>
-
-          <span>
-            <MdMail color="#f26425" size={25} />
-            <a href="mailto:sac@fibernetwork.com.br">sac@fibernetwork.com.br</a>
-          </span>
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </section>
 

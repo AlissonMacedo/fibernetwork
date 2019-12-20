@@ -9,10 +9,11 @@ import {
   MdAndroid,
 } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import { FaFacebookSquare, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
 
 import logo from '../../assets/img/logo_fiber.png';
 import logoFiber from '../../assets/img/logo_fiber.svg';
+import logoFiber2 from '../../assets/img/logo_fiber02.svg';
 
 import { Container } from './styles';
 
@@ -91,12 +92,12 @@ export default function Header() {
           <div className="mobile__header">
             <img
               className="mobile__header--photo"
-              src={logoFiber}
+              src={logoFiber2}
               alt="Fiber Network"
             />
-            <span className="mobile__header--text">
+            {/* <span className="mobile__header--text">
               <b>Fiber Network</b>
-            </span>
+            </span> */}
           </div>
 
           <ul className="mobile__list">

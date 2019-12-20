@@ -84,19 +84,25 @@ export default function Home() {
         </p>
         <div className="banner__contato">
           <h2>Assine já:</h2>
-          <button type="button" className="plan__btnBox btn-whatsapp mt-small">
+          <a
+            href="tel:9231991000"
+            className="plan__btnBox btn-whatsapp mt-small"
+          >
             <span>
               <IoMdPhonePortrait />
               Via telefone
             </span>
-          </button>
+          </a>
 
-          <button type="button" className="plan__btnBox btn-whatsapp mt-small">
+          <a
+            href="https://api.whatsapp.com/send?phone=5592993163444"
+            className="plan__btnBox btn-whatsapp mt-small"
+          >
             <span>
               <IoLogoWhatsapp />
               Via Whatsapp
             </span>
-          </button>
+          </a>
         </div>
       </Banner>
     </>

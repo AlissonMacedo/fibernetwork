@@ -25,7 +25,7 @@ export default function Empresarial() {
       download: 20,
       upload: 10,
       feature1: 'Garantia de 70%',
-      feature2: 'SLA: 1 dia útil',
+      feature2: 'SLA 24 horas',
       feature3: 'IP Público Dinâmico',
       feature4: 'Franquia 700 GB',
     },
@@ -36,7 +36,7 @@ export default function Empresarial() {
       download: 50,
       upload: 25,
       feature1: 'Garantia de 70%',
-      feature2: 'SLA: 1 dia útil',
+      feature2: 'SLA 24 horas',
       feature3: 'IP Público Dinâmico',
       feature4: 'Franquia 800 GB',
     },
@@ -47,7 +47,7 @@ export default function Empresarial() {
       download: 100,
       upload: 50,
       feature1: 'Garantia de 70%',
-      feature2: 'SLA: 1 dia útil',
+      feature2: 'SLA 24 horas',
       feature3: 'IP Público Dinâmico',
       feature4: 'Franquia 1000 GB',
     },
@@ -67,7 +67,7 @@ export default function Empresarial() {
     {
       id: 3,
       icon: <MdWatchLater color="#f70" size={60} />,
-      title: 'Acordo de Nível de Serviço de 1 dia útil',
+      title: 'Acordo de Nível de Serviço de 24 horas',
     },
     {
       id: 4,
@@ -100,7 +100,7 @@ export default function Empresarial() {
     {
       id: 3,
       icon: <MdWatchLater color="#f70" size={60} />,
-      title: 'SLA 4hs',
+      title: 'SLA 4 horas',
     },
     {
       id: 4,
@@ -133,7 +133,7 @@ export default function Empresarial() {
       download: '100%',
       upload: '100%',
       feature1: 'Garantia de 100%',
-      feature2: 'SLA: 4h',
+      feature2: 'SLA 4 horas',
       feature3: 'IP Público Fixo',
       feature4: 'Franquia Ilimitada',
     },

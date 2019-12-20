@@ -45,6 +45,10 @@
   text-align: center;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 .h-desk {
   @media only screen and (min-width: 900px) {
     display: none;

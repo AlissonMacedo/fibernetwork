@@ -9,6 +9,17 @@ export const Presentation = styled.section`
   background-position: center;
 
   @media (max-width: 768px) {
+    background: #f26425;
+    background: -webkit-linear-gradient(
+      to right,
+      #f26425,
+      #ed8f03
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #f26425,
+      #ed8f03
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 80%;
   }
 `;
