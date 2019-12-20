@@ -10,6 +10,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import slider1 from '../../assets/img/natal_2019.png';
+import slider2 from '../../assets/img/ultra-rapida.png';
 import device from '../../assets/img/device-tv.png';
 import suaEmpresa from '../../assets/img/sua-empresa.jpg';
 
@@ -22,9 +23,16 @@ export default function Home() {
         showStatus={false}
         showThumbs={false}
         className="mt-big-carousel"
+        autoPlay
+        interval={5000}
+        infiniteLoop
+        stopOnHover
       >
         <div>
           <img src={slider1} alt="Slider 01" />
+        </div>
+        <div>
+          <img src={slider2} alt="Slider 02" />
         </div>
       </Carousel>
 

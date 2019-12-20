@@ -1,5 +1,21 @@
 import React from 'react';
-import { FaConnectdevelop } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import {
+  MdLockOutline,
+  MdRecentActors,
+  MdTrendingUp,
+  MdDescription,
+  MdRecordVoiceOver,
+  MdPayment,
+  MdQuestionAnswer,
+  MdFileDownload,
+  MdInsertDriveFile,
+  MdInsertChart,
+  MdApps,
+  MdList,
+} from 'react-icons/md';
+
+import contrato from '../../assets/download/CONTRATO_FIBER_NETWORK.pdf';
 
 export default function AreaCliente() {
   return (
@@ -23,60 +39,60 @@ export default function AreaCliente() {
       <section className="area-cliente">
         <div className="teste-velocidade">
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdLockOutline size={20} />
             <h2>Alterar Senha</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdApps size={20} />
             <h2>Outros Serviços</h2>
           </div>
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdInsertDriveFile size={20} />
             <h2>Segunda Via de Boletos</h2>
           </div>
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdRecentActors size={20} />
             <h2>Dados Cadastrais</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdList size={20} />
             <h2>Serviços Contratados</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdFileDownload size={20} />
             <h2>Download Contrato Fiber Network</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdQuestionAnswer size={20} />
             <h2>Histórico de Mensagens</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdTrendingUp size={20} />
             <h2>Relatório de Utilização</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdDescription size={20} />
             <h2>Protocolo de Atendimento</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdPayment size={20} />
             <h2>Pagamentos Online</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdRecordVoiceOver size={20} />
             <h2>Suporte Online</h2>
           </div>
 
           <div className="teste-velocidade__card">
-            <FaConnectdevelop size={20} />
+            <MdInsertChart size={20} />
             <h2>Histórico Financeiro</h2>
           </div>
         </div>
@@ -87,33 +103,43 @@ export default function AreaCliente() {
         <div className="teste-velocidade">
           <div className="teste-velocidade__card">
             <h2>Minha Conexão</h2>
-            <a href="http://www.minhaconexao.com.br/?server_id=002132">
+            <a
+              className="ml-small"
+              href="http://www.minhaconexao.com.br/?server_id=002132"
+            >
               <span>Iniciar teste</span>
             </a>
           </div>
 
           <div className="teste-velocidade__card">
             <h2>nPerf</h2>
-            <a href="https://simet.nic.br/projetos/simet-app.html">
+
+            <a
+              className="ml-small"
+              href="https://simet.nic.br/projetos/simet-app.html"
+            >
               <span>Iniciar teste</span>
             </a>
           </div>
           <div className="teste-velocidade__card">
             <h2>Simet</h2>
-            <a href="https://simet.nic.br/projetos/simet-app.html">
+            <a
+              className="ml-small"
+              href="https://simet.nic.br/projetos/simet-app.html"
+            >
               <span>Iniciar teste</span>
             </a>
           </div>
           <div className="teste-velocidade__card">
             <h2>Speed Test</h2>
-            <a href="http://www.speedtest.net/pt">
+            <a className="ml-small" href="http://www.speedtest.net/pt">
               <span>Iniciar teste</span>
             </a>
           </div>
 
           <div className="teste-velocidade__card">
             <h2>Netflix Fast</h2>
-            <a href="https://fast.com/pt/">
+            <a className="ml-small" href="https://fast.com/pt/">
               <span>Iniciar teste</span>
             </a>
           </div>

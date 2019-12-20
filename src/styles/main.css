@@ -197,6 +197,9 @@ button {
 .mt-12 {
   margin-top: -12rem !important; }
 
+.ml-small {
+  margin-left: 3rem; }
+
 .no-transparent {
   background-color: #f26425 !important; }
 
