@@ -882,6 +882,8 @@ button {
     transition: all 0.5s;
     margin-bottom: 2rem;
     margin-right: 1rem; }
+    .teste-velocidade__card > svg {
+      color: #f26425; }
     @media (max-width: 56.25em) {
       .teste-velocidade__card {
         width: 100%; } }

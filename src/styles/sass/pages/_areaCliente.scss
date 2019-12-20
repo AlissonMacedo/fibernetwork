@@ -93,6 +93,10 @@
     margin-bottom: 2rem;
     margin-right: 1rem;
 
+    > svg {
+      color: $color-primary;
+    }
+
     @include respond(tab-port) {
       width: 100%;
     }
