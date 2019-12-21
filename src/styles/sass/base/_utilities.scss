@@ -33,6 +33,14 @@
   margin-top: -12rem !important;
 }
 
+.mt-12-not-mobile {
+  margin-top: -12rem !important;
+
+  @include respond(tab-port) {
+    margin-top: 0 !important;
+  }
+}
+
 .ml-small {
   margin-left: 3rem;
 }

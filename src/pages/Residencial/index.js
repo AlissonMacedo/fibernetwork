@@ -78,12 +78,12 @@ export default function Residencial() {
 
   return (
     <>
-      <Presentation />
-
-      <div className="nossos-planos mb-middle tracking-in-expand">
-        <h1>Nossos Planos</h1>
-        <h2>Empresariais</h2>
-      </div>
+      <Presentation>
+        <div className="nossos-planos-residencial tracking-in-expand">
+          <h1>Nossos Planos</h1>
+          <h2>Residenciais</h2>
+        </div>
+      </Presentation>
 
       <section className="vantagens-residencial swing-in-top-fwd mt-12">
         <h1>Vantagens</h1>

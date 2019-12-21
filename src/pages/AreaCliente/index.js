@@ -96,9 +96,10 @@ export default function AreaCliente() {
           <div className="teste-velocidade__card">
             <MdFileDownload size={20} />
             <a
-              href="http://sistema.fibernetwork.com.br:40860/central"
+              href={contrato}
               target="_blank"
               rel="noopener noreferrer"
+              download
             >
               <h2>Download Contrato Fiber Network</h2>
             </a>

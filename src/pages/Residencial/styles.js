@@ -8,19 +8,15 @@ export const Presentation = styled.section`
   height: 100%;
   background-position: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 56.25em) {
     background: #f26425;
-    background: -webkit-linear-gradient(
-      to right,
-      #f26425,
-      #ed8f03
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #f26425,
-      #ed8f03
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #f26425, #ed8f03);
+    background: linear-gradient(to right, #f26425, #ed8f03);
     height: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

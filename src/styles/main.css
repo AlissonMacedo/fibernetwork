@@ -197,6 +197,12 @@ button {
 .mt-12 {
   margin-top: -12rem !important; }
 
+.mt-12-not-mobile {
+  margin-top: -12rem !important; }
+  @media (max-width: 56.25em) {
+    .mt-12-not-mobile {
+      margin-top: 0 !important; } }
+
 .ml-small {
   margin-left: 3rem; }
 
@@ -1193,6 +1199,22 @@ button {
   margin-top: 8rem;
   background: #f26425;
   padding: 20rem; }
+
+.nossos-planos-residencial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .nossos-planos-residencial h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #fff; }
+  .nossos-planos-residencial h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff; }
 
 .vantagens-residencial {
   background: #ffffff;

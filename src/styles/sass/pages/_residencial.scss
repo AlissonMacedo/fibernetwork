@@ -33,6 +33,27 @@
   padding: 20rem;
 }
 
+.nossos-planos-residencial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
 .vantagens-residencial {
   background: $color-white;
   border-radius: 1rem;
