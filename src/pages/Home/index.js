@@ -85,7 +85,7 @@ export default function Home() {
         <div className="banner__contato">
           <h2>Assine já:</h2>
           <a
-            href="tel:9231991000"
+            href="tel:09231991000"
             className="plan__btnBox btn-whatsapp mt-small"
           >
             <span>

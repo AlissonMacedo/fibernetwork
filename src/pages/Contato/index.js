@@ -94,7 +94,7 @@ export default function Contato() {
           </span>
 
           <a
-            href="https://goo.gl/maps/uDWXDNCZ8nfuQTUj6"
+            href="https://goo.gl/maps/P3cG9EhfTNgDg5ti7"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-orange mt-middle"

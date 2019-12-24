@@ -193,7 +193,7 @@ export default function AreaCliente() {
 
             <a
               className="ml-small"
-              href="https://simet.nic.br/projetos/simet-app.html"
+              href="https://www.nperf.com/?sp=1823"
               target="_blank"
               rel="noopener noreferrer"
             >
