@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import api from '../../../services/api';
 
 import InputTeste from '../../../components/Input';
 import validarCNPJ from '../../../utils/ValidaCnpj';
@@ -24,7 +26,7 @@ export default function Fisica() {
     cnpj: Yup.string().required('O CNPJ é obrigatório'),
     inscEstadual: Yup.string().required('Informe sua inscrição estadual'),
     inscMunicipal: Yup.string().required('Informe sua inscrição municipal'),
-    planoResidencial: Yup.string().required(),
+    planoEmpresarial: Yup.string().required(),
     taxa: Yup.string().required('Selecione a sua forma de pagamento'),
     dataVencimento: Yup.string().required('Seleciona o dia do vencimento'),
     cep: Yup.string().required('Informe o ceu CEP'),
@@ -53,12 +55,12 @@ export default function Fisica() {
   ];
 
   const dataVencimento = [
-    { id: 'venc01', title: 'Vencimento no dia 01' },
-    { id: 'venc06', title: 'Vencimento no dia 06' },
-    { id: 'venc11', title: 'Vencimento no dia 11' },
-    { id: 'venc17', title: 'Vencimento no dia 17' },
-    { id: 'venc22', title: 'Vencimento no dia 22' },
-    { id: 'venc27', title: 'Vencimento no dia 27' },
+    { id: 'Vencimento no dia 01', title: 'Vencimento no dia 01' },
+    { id: 'Vencimento no dia 06', title: 'Vencimento no dia 06' },
+    { id: 'Vencimento no dia 11', title: 'Vencimento no dia 11' },
+    { id: 'Vencimento no dia 17', title: 'Vencimento no dia 17' },
+    { id: 'Vencimento no dia 22', title: 'Vencimento no dia 22' },
+    { id: 'Vencimento no dia 27', title: 'Vencimento no dia 27' },
   ];
 
   const taxa = [
@@ -109,8 +111,38 @@ export default function Fisica() {
     setCheckCnpj(response);
   }
 
-  function handleSubmit(data) {
-    console.log(data);
+  async function handleSubmit(data) {
+    try {
+      await api.post('formEmpresarial', {
+        razaoSocial: data.razaoSocial,
+        nomeFantasia: data.nomeFantasia,
+        nomeRepresentante: data.nomeRepresentante,
+        email: data.email,
+        emailOpcional: data.emailOpcional,
+        telefone: data.telefone,
+        telefoneOpcional: data.telefoneOpcional,
+        cnpj: data.cnpj,
+        dataFundacao: data.dataFundacao,
+        inscEstadual: data.inscEstadual,
+        inscMunicipal: data.inscMunicipal,
+        planoEmpresarial: data.planoEmpresarial,
+        taxa: data.taxa,
+        dataVencimento: data.dataVencimento,
+        cep: data.cep,
+        endereco: data.endereco,
+        numero: data.numero,
+        complemento: data.complemento,
+        bairro: data.bairro,
+        cidade: data.cidade,
+        estado: data.estado,
+        sobre: data.sobre,
+        mensagem: data.mensagem,
+      });
+
+      toast.success('Sua mensagem foi enviado com sucesso.');
+    } catch (error) {
+      toast.error('Ops! Houve um problema no momento do envio.');
+    }
   }
 
   return (
@@ -255,8 +287,8 @@ export default function Fisica() {
             <Select
               className="form__input"
               placeholder="Seu plano Empresarial"
-              id="planoResidencial"
-              name="planoResidencial"
+              id="planoEmpresarial"
+              name="planoEmpresarial"
               options={plano}
             />
           </div>

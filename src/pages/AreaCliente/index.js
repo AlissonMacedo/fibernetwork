@@ -180,7 +180,7 @@ export default function AreaCliente() {
             <h2>Minha Conexão</h2>
             <a
               className="ml-small"
-              href="http://www.minhaconexao.com.br/?server_id=002132"
+              href="https://www.minhaconexao.com.br/?server_id=002132"
               target="_blank"
               rel="noopener noreferrer"
             >

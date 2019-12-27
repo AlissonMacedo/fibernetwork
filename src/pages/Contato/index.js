@@ -2,6 +2,7 @@
 import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import { IoLogoWhatsapp } from 'react-icons/io';
 import {
@@ -11,7 +12,9 @@ import {
   MdPhoneInTalk,
   MdPhonelink,
 } from 'react-icons/md';
+
 import { FaFacebookSquare, FaInstagram } from 'react-icons/fa';
+import api from '../../services/api';
 
 import InputTeste from '../../components/Input';
 import contato from '../../assets/img/contato.svg';
@@ -24,8 +27,19 @@ export default function Contato() {
     mensagem: Yup.string().required('Digite a sua mensagem'),
   });
 
-  function handleSubmit(data) {
-    console.log(data);
+  async function handleSubmit({ nome, email, telefone, mensagem }) {
+    try {
+      await api.post('formContato', {
+        nome,
+        email,
+        telefone,
+        mensagem,
+      });
+
+      toast.success('Sua mensagem foi enviado com sucesso.');
+    } catch (error) {
+      toast.error('Ops! Houve um problema no momento do envio.');
+    }
   }
 
   return (
