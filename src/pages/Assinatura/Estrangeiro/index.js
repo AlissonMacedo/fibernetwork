@@ -351,7 +351,8 @@ export default function Fisica() {
         </div>
 
         <div className="form__group group-width">
-          <textarea
+          <Input
+            multiline
             type="text"
             className="form__input"
             placeholder="Sua mensagem"
