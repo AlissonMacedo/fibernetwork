@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Form, Input, Select } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import axios from 'axios';
-import { toast } from 'react-toastify';
-
-import api from '../../../services/api';
 
 import InputTeste from '../../../components/Input';
 import Valida from '../../../utils/validaCpf';
@@ -47,26 +44,26 @@ export default function Fisica() {
   });
 
   const options = [
-    { id: 'Google', title: 'Google' },
-    { id: 'Youtube', title: 'Youtube' },
-    { id: 'Facebook', title: 'Facebook' },
-    { id: 'Instagram', title: 'Instagram' },
-    { id: 'Site', title: 'Site' },
-    { id: 'Panfleto', title: 'Panfleto' },
-    { id: 'Indicação', title: 'Indicação' },
-    { id: 'Outdoor', title: 'Outdoor' },
-    { id: 'Carro de som', title: 'Carro de som' },
-    { id: 'Tenda', title: 'Tenda' },
-    { id: 'Loja', title: 'Loja' },
+    { id: 'google', title: 'Google' },
+    { id: 'yt', title: 'Youtube' },
+    { id: 'face', title: 'Facebook' },
+    { id: 'insta', title: 'Instagram' },
+    { id: 'site', title: 'Site' },
+    { id: 'panfleto', title: 'Panfleto' },
+    { id: 'indicacao', title: 'Indicação' },
+    { id: 'outdoor', title: 'Outdoor' },
+    { id: 'carro', title: 'Carro de som' },
+    { id: 'tenda', title: 'Tenda' },
+    { id: 'loja', title: 'Loja' },
   ];
 
   const dataVencimento = [
-    { id: 'Vencimento no dia 01', title: 'Vencimento no dia 01' },
-    { id: 'Vencimento no dia 06', title: 'Vencimento no dia 06' },
-    { id: 'Vencimento no dia 11', title: 'Vencimento no dia 11' },
-    { id: 'Vencimento no dia 17', title: 'Vencimento no dia 17' },
-    { id: 'Vencimento no dia 22', title: 'Vencimento no dia 22' },
-    { id: 'Vencimento no dia 27', title: 'Vencimento no dia 27' },
+    { id: 'venc01', title: 'Vencimento no dia 01' },
+    { id: 'venc06', title: 'Vencimento no dia 06' },
+    { id: 'venc11', title: 'Vencimento no dia 11' },
+    { id: 'venc17', title: 'Vencimento no dia 17' },
+    { id: 'venc22', title: 'Vencimento no dia 22' },
+    { id: 'venc27', title: 'Vencimento no dia 27' },
   ];
 
   const taxa = [
@@ -131,39 +128,8 @@ export default function Fisica() {
     setCheckCpf(response);
   }
 
-  async function handleSubmit(data) {
-    try {
-      await api.post('formPF', {
-        nome: data.nome,
-        sexo: data.sexo,
-        email: data.email,
-        emailOpcional: data.emailOpcional,
-        telefone: data.telefone,
-        telefoneOpcional: data.telefoneOpcional,
-        dataNascimento: data.dataNascimento,
-        estadoCivil: data.estadoCivil,
-        nomeConjuge: data.nomeConjuge,
-        cpf: data.cpf,
-        rg: data.rg,
-        orgExpedidor: data.orgExpedidor,
-        planoResidencial: data.planoResidencial,
-        taxa: data.taxa,
-        dataVencimento: data.dataVencimento,
-        cep: data.cep,
-        endereco: data.endereco,
-        numero: data.numero,
-        complemento: data.complemento,
-        bairro: data.bairro,
-        cidade: data.cidade,
-        estado: data.estado,
-        sobre: data.sobre,
-        mensagem: data.mensagem,
-      });
-
-      toast.success('Sua mensagem foi enviado com sucesso.');
-    } catch (error) {
-      toast.error('Ops! Houve um problema no momento do envio.');
-    }
+  function handleSubmit(data) {
+    console.log(data);
   }
 
   return (
@@ -190,6 +156,7 @@ export default function Fisica() {
             id="sexo"
             name="sexo"
             options={sexo}
+            style={{ height: 50 }}
           />
         </div>
 
@@ -256,6 +223,7 @@ export default function Fisica() {
             name="estadoCivil"
             options={estCivil}
             onChange={e => setEstadoCivil(e.target.value)}
+            style={{ height: 50 }}
           />
         </div>
 
@@ -288,12 +256,13 @@ export default function Fisica() {
 
         <div className="form__group group-width">
           <Input
-            type="number"
+            type="text"
             className="form__input"
             placeholder="Rg"
             id="rg"
             name="rg"
             maxLength="14"
+            mask=""
           />
         </div>
 
@@ -320,6 +289,7 @@ export default function Fisica() {
             id="planoResidencial"
             name="planoResidencial"
             options={plano}
+            style={{ height: 50 }}
           />
         </div>
 
@@ -330,6 +300,7 @@ export default function Fisica() {
             id="taxa"
             name="taxa"
             options={taxa}
+            style={{ height: 50 }}
           />
         </div>
 
@@ -340,6 +311,7 @@ export default function Fisica() {
             id="dataVencimento"
             name="dataVencimento"
             options={dataVencimento}
+            style={{ height: 50 }}
           />
         </div>
       </div>
@@ -438,16 +410,16 @@ export default function Fisica() {
             id="sobre"
             name="sobre"
             options={options}
+            style={{ height: 50 }}
           />
         </div>
 
         <div className="form__group group-width">
-          <Input
-            multiline
+          <textarea
             type="text"
             className="form__input"
             placeholder="Sua mensagem"
-            id="mensagem"
+            id="mensage"
             name="mensagem"
           />
         </div>
